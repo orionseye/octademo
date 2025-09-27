@@ -131,7 +131,7 @@ $(function() {
 		$this = $( this );
 		$(".fotoX ul.slider-container").empty();// [0]
 		
-		var folder = "img/";
+		var folder = "panagea/img/";
 		var file = $( this ).closest('.box_grid').find('figure img').attr('src').split('/')[2].split('.jpg')[0]; // [1]
 		
 		$.ajax({
