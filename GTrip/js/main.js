@@ -641,7 +641,7 @@ function initMap() {
 
   const contentString = `
     <div class="mapItem d-flex">
-      <img src="_GTrip/img/lists/hotel/1/1.png" alt="image" class="mapItem__img size-100 rounded-4">
+      <img src="GTrip/img/lists/hotel/1/1.png" alt="image" class="mapItem__img size-100 rounded-4">
 
       <div class="mapItem__content d-flex flex-column justify-between ml-15">
         <div>
