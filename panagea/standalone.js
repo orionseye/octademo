@@ -131,12 +131,11 @@ $(function() {
 		$this = $( this );
 		$(".fotoX ul.slider-container").empty();// [0]
 		
-		var folder = "panagea/img/";
+		var folder = "img/panagea/";
 		var file = $( this ).closest('.box_grid').find('figure img').attr('src').split('/')[2].split('.jpg')[0]; // [1]
 		
 		$.ajax({
 			url : folder,
-			dataType: 'json',
 			success: function (data) {
 				$(data).find("a").attr("href", function (i, val) {
 					if( val.match('^' + file + '(.*)\.(jpe?g)$') ) { // [2]
