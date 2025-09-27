@@ -1,0 +1,12 @@
+[out:json][timeout:25];
+// gather results
+(
+  node["tourism"="attraction"][image]({{bbox}});
+  node["tourism"="museum"][image]({{bbox}});
+  node[historic][image]({{bbox}});
+  node[heritage][image]({{bbox}});
+);
+// print results
+out body;
+>;
+out count skel qt;
