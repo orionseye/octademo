@@ -141,7 +141,7 @@ $(function() {
 					if( val.match('^' + file + '(.*)\.(jpe?g)$') ) { // [2]
 					$(".fotoX ul.slider-container").append("<li><img src='"+ folder + val +"'></li>"); // [3] swiffy-slider  (loading='lazy'  has bug..1st image gets not resized properly)
 					//$(".fotoX .slider-large").slick("slickAdd", "<div><img src='"+ folder + val +"'></div>");       // [3] for slick
-					//console.log("<img src='"+ folder + val +"'>");
+					console.log("<img src='"+ folder + val +"'>");
 					}
 				});
 			},
