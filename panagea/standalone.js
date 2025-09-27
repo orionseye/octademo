@@ -136,6 +136,7 @@ $(function() {
 		
 		$.ajax({
 			url : folder,
+			dataType: 'json',
 			success: function (data) {
 				$(data).find("a").attr("href", function (i, val) {
 					if( val.match('^' + file + '(.*)\.(jpe?g)$') ) { // [2]
