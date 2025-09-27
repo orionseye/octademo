@@ -1,0 +1,3418 @@
+<!DOCTYPE html>
+<html lang="en" data-x="html" data-x-toggle="html-overflow-hidden">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="img/favicon.png">
+   
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="GTrip/css/vendors.css">
+  <link rel="stylesheet" href="GTrip/css/main.css">
+  <link rel="stylesheet" href="icons/phosphor/style.css" type="text/css">
+
+  <title>octa dms | hotels listing</title>
+</head>
+
+<body>
+  <div class="preloader js-preloader">
+    <div class="preloader__wrap">
+      <div class="preloader__icon">
+		<svg width="48" height="48" viewBox="0 0 48 48" fill="none" version="1.1" id="svg12" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"> <defs id="defs16" /> <rect width="48" height="48" fill="white" fill-opacity="0.01" id="rect2" /> <path d="M18 23.9372V10C18 6.68629 20.6863 4 24 4C27.3137 4 30 6.68629 30 10V12.0057" stroke="#000000" stroke-width="4" stroke-linecap="round" id="path4" style="stroke:#26a69a;stroke-opacity:1;stroke-width:1.84002;stroke-dasharray:none" /> <path d="M30 24.0035V38C30 41.3137 27.3137 44 24 44C20.6863 44 18 41.3137 18 38V35.97" stroke="#000000" stroke-width="4" stroke-linecap="round" id="path6" style="stroke:#26a69a;stroke-opacity:1;stroke-width:1.84002;stroke-dasharray:none" /> <path d="M24 30H9.98415C6.67919 30 4 27.3137 4 24C4 20.6863 6.67919 18 9.98415 18H11.9886" stroke="#000000" stroke-width="4" stroke-linecap="round" id="path8" style="stroke:#26a69a;stroke-opacity:1;stroke-width:1.84002;stroke-dasharray:none" /> <path d="M24 18H37.9888C41.3087 18 44 20.6863 44 24C44 27.3137 41.3087 30 37.9888 30H36.0663" stroke="#000000" stroke-width="4" stroke-linecap="round" id="path10" style="fill:none;fill-opacity:1;stroke:#26a69a;stroke-opacity:1;stroke-width:1.84002;stroke-dasharray:none" /> </svg>
+      </div>
+    </div>
+
+    <div class="preloader__title" style="color: #26a69a; font-weight: 100; font-size: 1.5em;">octaDMS</div>
+  </div>
+
+  <main class="home-boxed">
+  
+    <section class="layout-pt-md layout-pb-lg">
+      <div class="container">
+        <div class="row y-gap-30">
+          <div class="col-xl-3 col-lg-4 lg:d-none">
+            <aside class="sidebar y-gap-40">
+              <div class="sidebar__item -no-border">
+                <div class="flex-center ratio ratio-15:9 js-lazy" data-bg="GTrip/img/general/map.png">
+                  <button class="button py-15 px-24 -blue-1 bg-white text-dark-1 absolute" data-x-click="mapFilter">
+                    <i class="icon-destination text-22 mr-10"></i>
+                    Show on map
+                  </button>
+                </div>
+              </div>
+
+              <div class="sidebar__item -no-border">
+                <h5 class="text-18 fw-500 mb-10">Search by property name</h5>
+                <div class="single-field relative d-flex items-center py-10">
+                  <input class="pl-50 border-light text-dark-1 h-50 rounded-8" type="email" placeholder="e.g. Best Western">
+                  <button class="absolute d-flex items-center h-full">
+                    <i class="icon-search text-20 px-15 text-dark-1"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="sidebar__item">
+                <h5 class="text-18 fw-500 mb-10">Deals</h5>
+                <div class="sidebar-checkbox">
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+                      <div class="d-flex items-center">
+                        <div class="form-checkbox">
+                          <input type="checkbox">
+                          <div class="form-checkbox__mark">
+                            <div class="form-checkbox__icon icon-check"></div>
+                          </div>
+                        </div>
+                        <div class="text-15 ml-10">Free cancellation</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+                      <div class="d-flex items-center">
+                        <div class="form-checkbox">
+                          <input type="checkbox">
+                          <div class="form-checkbox__mark">
+                            <div class="form-checkbox__icon icon-check"></div>
+                          </div>
+                        </div>
+                        <div class="text-15 ml-10">Reserve now, pay at stay </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+                      <div class="d-flex items-center">
+                        <div class="form-checkbox">
+                          <input type="checkbox">
+                          <div class="form-checkbox__mark">
+                            <div class="form-checkbox__icon icon-check"></div>
+                          </div>
+                        </div>
+                        <div class="text-15 ml-10">Properties with special offers</div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="sidebar__item">
+                <h5 class="text-18 fw-500 mb-10">Popular Filters</h5>
+                <div class="sidebar-checkbox">
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+                      <div class="d-flex items-center">
+                        <div class="form-checkbox">
+                          <input type="checkbox">
+                          <div class="form-checkbox__mark">
+                            <div class="form-checkbox__icon icon-check"></div>
+                          </div>
+                        </div>
+                        <div class="text-15 ml-10">Breakfast Included</div>
+                      </div>
+                    </div>
+
+                    <div class="col-auto">
+                      <div class="text-15 text-light-1">92</div>
+                    </div>
+                  </div>
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+                      <div class="d-flex items-center">
+                        <div class="form-checkbox">
+                          <input type="checkbox">
+                          <div class="form-checkbox__mark">
+                            <div class="form-checkbox__icon icon-check"></div>
+                          </div>
+                        </div>
+                        <div class="text-15 ml-10">Romantic</div>
+                      </div>
+                    </div>
+
+                    <div class="col-auto">
+                      <div class="text-15 text-light-1">45</div>
+                    </div>
+                  </div>
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+                      <div class="d-flex items-center">
+                        <div class="form-checkbox">
+                          <input type="checkbox">
+                          <div class="form-checkbox__mark">
+                            <div class="form-checkbox__icon icon-check"></div>
+                          </div>
+                        </div>
+                        <div class="text-15 ml-10">Airport Transfer</div>
+                      </div>
+                    </div>
+
+                    <div class="col-auto">
+                      <div class="text-15 text-light-1">21</div>
+                    </div>
+                  </div>
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+                      <div class="d-flex items-center">
+                        <div class="form-checkbox">
+                          <input type="checkbox">
+                          <div class="form-checkbox__mark">
+                            <div class="form-checkbox__icon icon-check"></div>
+                          </div>
+                        </div>
+                        <div class="text-15 ml-10">WiFi Included </div>
+                      </div>
+                    </div>
+
+                    <div class="col-auto">
+                      <div class="text-15 text-light-1">78</div>
+                    </div>
+                  </div>
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+                      <div class="d-flex items-center">
+                        <div class="form-checkbox">
+                          <input type="checkbox">
+                          <div class="form-checkbox__mark">
+                            <div class="form-checkbox__icon icon-check"></div>
+                          </div>
+                        </div>
+                        <div class="text-15 ml-10">5 Star</div>
+                      </div>
+                    </div>
+
+                    <div class="col-auto">
+                      <div class="text-15 text-light-1">679</div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="sidebar__item pb-30">
+                <h5 class="text-18 fw-500 mb-10">Nightly Price</h5>
+                <div class="row x-gap-10 y-gap-30">
+                  <div class="col-12">
+                    <div class="js-price-rangeSlider">
+                      <div class="text-14 fw-500"></div>
+
+                      <div class="d-flex justify-between mb-20">
+                        <div class="text-15 text-dark-1">
+                          <span class="js-lower"></span>
+                          -
+                          <span class="js-upper"></span>
+                        </div>
+                      </div>
+
+                      <div class="px-5">
+                        <div class="js-slider"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sidebar__item">
+                <h5 class="text-18 fw-500 mb-10">Amenities</h5>
+                <div class="sidebar-checkbox">
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+
+                      <div class="d-flex items-center">
+                        <div class="form-checkbox ">
+                          <input type="checkbox" name="name">
+                          <div class="form-checkbox__mark">
+                            <div class="form-checkbox__icon icon-check"></div>
+                          </div>
+                        </div>
+
+                        <div class="text-15 ml-10">Breakfast Included</div>
+
+                      </div>
+
+                    </div>
+
+                    <div class="col-auto">
+                      <div class="text-15 text-light-1">92</div>
+                    </div>
+                  </div>
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+
+                      <div class="d-flex items-center">
+                        <div class="form-checkbox ">
+                          <input type="checkbox" name="name">
+                          <div class="form-checkbox__mark">
+                            <div class="form-checkbox__icon icon-check"></div>
+                          </div>
+                        </div>
+
+                        <div class="text-15 ml-10">WiFi Included </div>
+
+                      </div>
+
+                    </div>
+
+                    <div class="col-auto">
+                      <div class="text-15 text-light-1">45</div>
+                    </div>
+                  </div>
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+
+                      <div class="d-flex items-center">
+                        <div class="form-checkbox ">
+                          <input type="checkbox" name="name">
+                          <div class="form-checkbox__mark">
+                            <div class="form-checkbox__icon icon-check"></div>
+                          </div>
+                        </div>
+
+                        <div class="text-15 ml-10">Pool</div>
+
+                      </div>
+
+                    </div>
+
+                    <div class="col-auto">
+                      <div class="text-15 text-light-1">21</div>
+                    </div>
+                  </div>
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+
+                      <div class="d-flex items-center">
+                        <div class="form-checkbox ">
+                          <input type="checkbox" name="name">
+                          <div class="form-checkbox__mark">
+                            <div class="form-checkbox__icon icon-check"></div>
+                          </div>
+                        </div>
+
+                        <div class="text-15 ml-10">Restaurant </div>
+
+                      </div>
+
+                    </div>
+
+                    <div class="col-auto">
+                      <div class="text-15 text-light-1">78</div>
+                    </div>
+                  </div>
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+
+                      <div class="d-flex items-center">
+                        <div class="form-checkbox ">
+                          <input type="checkbox" name="name">
+                          <div class="form-checkbox__mark">
+                            <div class="form-checkbox__icon icon-check"></div>
+                          </div>
+                        </div>
+
+                        <div class="text-15 ml-10">Air conditioning </div>
+
+                      </div>
+
+                    </div>
+
+                    <div class="col-auto">
+                      <div class="text-15 text-light-1">679</div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="sidebar__item">
+                <h5 class="text-18 fw-500 mb-10">Star Rating</h5>
+                <div class="row x-gap-10 y-gap-10 pt-10">
+
+                  <div class="col-auto">
+                    <a href="#" class="button -blue-1 bg-blue-1-05 teal-1 py-5 px-20 rounded-100">1</a>
+                  </div>
+
+                  <div class="col-auto">
+                    <a href="#" class="button -blue-1 bg-blue-1-05 teal-1 py-5 px-20 rounded-100">2</a>
+                  </div>
+
+                  <div class="col-auto">
+                    <a href="#" class="button -blue-1 bg-blue-1-05 teal-1 py-5 px-20 rounded-100">3</a>
+                  </div>
+
+                  <div class="col-auto">
+                    <a href="#" class="button -blue-1 bg-blue-1-05 teal-1 py-5 px-20 rounded-100">4</a>
+                  </div>
+
+                  <div class="col-auto">
+                    <a href="#" class="button -blue-1 bg-blue-1-05 teal-1 py-5 px-20 rounded-100">5</a>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="sidebar__item">
+                <h5 class="text-18 fw-500 mb-10">Guest Rating</h5>
+                <div class="sidebar-checkbox">
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+
+                      <div class="form-radio d-flex items-center ">
+                        <div class="radio">
+                          <input type="radio" name="name">
+                          <div class="radio__mark">
+                            <div class="radio__icon"></div>
+                          </div>
+                        </div>
+                        <div class="ml-10">Any</div>
+                      </div>
+
+                    </div>
+
+                    <div class="col-auto">
+                      <div class="text-15 text-light-1">92</div>
+                    </div>
+                  </div>
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+
+                      <div class="form-radio d-flex items-center ">
+                        <div class="radio">
+                          <input type="radio" name="name">
+                          <div class="radio__mark">
+                            <div class="radio__icon"></div>
+                          </div>
+                        </div>
+                        <div class="ml-10">Wonderful 4.5+</div>
+                      </div>
+
+                    </div>
+
+                    <div class="col-auto">
+                      <div class="text-15 text-light-1">45</div>
+                    </div>
+                  </div>
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+
+                      <div class="form-radio d-flex items-center ">
+                        <div class="radio">
+                          <input type="radio" name="name">
+                          <div class="radio__mark">
+                            <div class="radio__icon"></div>
+                          </div>
+                        </div>
+                        <div class="ml-10">Very good 4+</div>
+                      </div>
+
+                    </div>
+
+                    <div class="col-auto">
+                      <div class="text-15 text-light-1">21</div>
+                    </div>
+                  </div>
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+
+                      <div class="form-radio d-flex items-center ">
+                        <div class="radio">
+                          <input type="radio" name="name">
+                          <div class="radio__mark">
+                            <div class="radio__icon"></div>
+                          </div>
+                        </div>
+                        <div class="ml-10">Good 3.5+ </div>
+                      </div>
+
+                    </div>
+
+                    <div class="col-auto">
+                      <div class="text-15 text-light-1">78</div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="sidebar__item">
+                <h5 class="text-18 fw-500 mb-10">Style</h5>
+                <div class="sidebar-checkbox">
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+
+                      <div class="d-flex items-center">
+                        <div class="form-checkbox ">
+                          <input type="checkbox" name="name">
+                          <div class="form-checkbox__mark">
+                            <div class="form-checkbox__icon icon-check"></div>
+                          </div>
+                        </div>
+
+                        <div class="text-15 ml-10">Budget</div>
+
+                      </div>
+
+                    </div>
+
+                    <div class="col-auto">
+                      <div class="text-15 text-light-1">92</div>
+                    </div>
+                  </div>
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+
+                      <div class="d-flex items-center">
+                        <div class="form-checkbox ">
+                          <input type="checkbox" name="name">
+                          <div class="form-checkbox__mark">
+                            <div class="form-checkbox__icon icon-check"></div>
+                          </div>
+                        </div>
+
+                        <div class="text-15 ml-10">Mid-range </div>
+
+                      </div>
+
+                    </div>
+
+                    <div class="col-auto">
+                      <div class="text-15 text-light-1">45</div>
+                    </div>
+                  </div>
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+
+                      <div class="d-flex items-center">
+                        <div class="form-checkbox ">
+                          <input type="checkbox" name="name">
+                          <div class="form-checkbox__mark">
+                            <div class="form-checkbox__icon icon-check"></div>
+                          </div>
+                        </div>
+
+                        <div class="text-15 ml-10">Luxury</div>
+
+                      </div>
+
+                    </div>
+
+                    <div class="col-auto">
+                      <div class="text-15 text-light-1">21</div>
+                    </div>
+                  </div>
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+
+                      <div class="d-flex items-center">
+                        <div class="form-checkbox ">
+                          <input type="checkbox" name="name">
+                          <div class="form-checkbox__mark">
+                            <div class="form-checkbox__icon icon-check"></div>
+                          </div>
+                        </div>
+
+                        <div class="text-15 ml-10">Family-friendly </div>
+
+                      </div>
+
+                    </div>
+
+                    <div class="col-auto">
+                      <div class="text-15 text-light-1">78</div>
+                    </div>
+                  </div>
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+
+                      <div class="d-flex items-center">
+                        <div class="form-checkbox ">
+                          <input type="checkbox" name="name">
+                          <div class="form-checkbox__mark">
+                            <div class="form-checkbox__icon icon-check"></div>
+                          </div>
+                        </div>
+
+                        <div class="text-15 ml-10">Business </div>
+
+                      </div>
+
+                    </div>
+
+                    <div class="col-auto">
+                      <div class="text-15 text-light-1">679</div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="sidebar__item">
+                <h5 class="text-18 fw-500 mb-10">Neighborhood</h5>
+                <div class="sidebar-checkbox">
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+
+                      <div class="d-flex items-center">
+                        <div class="form-checkbox ">
+                          <input type="checkbox" name="name">
+                          <div class="form-checkbox__mark">
+                            <div class="form-checkbox__icon icon-check"></div>
+                          </div>
+                        </div>
+
+                        <div class="text-15 ml-10">Central </div>
+
+                      </div>
+
+                    </div>
+
+                    <div class="col-auto">
+                      <div class="text-15 text-light-1">92</div>
+                    </div>
+                  </div>
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+
+                      <div class="d-flex items-center">
+                        <div class="form-checkbox ">
+                          <input type="checkbox" name="name">
+                          <div class="form-checkbox__mark">
+                            <div class="form-checkbox__icon icon-check"></div>
+                          </div>
+                        </div>
+
+                        <div class="text-15 ml-10">Guests&#39; favourite area </div>
+
+                      </div>
+
+                    </div>
+
+                    <div class="col-auto">
+                      <div class="text-15 text-light-1">45</div>
+                    </div>
+                  </div>
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+
+                      <div class="d-flex items-center">
+                        <div class="form-checkbox ">
+                          <input type="checkbox" name="name">
+                          <div class="form-checkbox__mark">
+                            <div class="form-checkbox__icon icon-check"></div>
+                          </div>
+                        </div>
+
+                        <div class="text-15 ml-10">Morningside </div>
+
+                      </div>
+
+                    </div>
+
+                    <div class="col-auto">
+                      <div class="text-15 text-light-1">21</div>
+                    </div>
+                  </div>
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+
+                      <div class="d-flex items-center">
+                        <div class="form-checkbox ">
+                          <input type="checkbox" name="name">
+                          <div class="form-checkbox__mark">
+                            <div class="form-checkbox__icon icon-check"></div>
+                          </div>
+                        </div>
+
+                        <div class="text-15 ml-10">Edinburgh Old Town </div>
+
+                      </div>
+
+                    </div>
+
+                    <div class="col-auto">
+                      <div class="text-15 text-light-1">78</div>
+                    </div>
+                  </div>
+
+                  <div class="row y-gap-10 items-center justify-between">
+                    <div class="col-auto">
+
+                      <div class="d-flex items-center">
+                        <div class="form-checkbox ">
+                          <input type="checkbox" name="name">
+                          <div class="form-checkbox__mark">
+                            <div class="form-checkbox__icon icon-check"></div>
+                          </div>
+                        </div>
+
+                        <div class="text-15 ml-10">Oxford Street </div>
+
+                      </div>
+
+                    </div>
+
+                    <div class="col-auto">
+                      <div class="text-15 text-light-1">679</div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </aside>
+          </div>
+
+          <div class="col-xl-9 col-lg-8">
+            <div class="row y-gap-10 items-center justify-between">
+              <div class="col-auto">
+                <div class="text-18"><span class="fw-500">3,269 properties</span> found</div>
+              </div>
+
+              <div class="col-auto">
+                <div class="row x-gap-20 y-gap-20">
+                  <div class="col-auto">
+                    <button class="button -blue-1 h-40 px-20 rounded-100 bg-teal-1-05 text-15 teal-1">
+                      <i class="icon-up-down text-14 mr-10"></i>
+                      Top picks for your search
+                    </button>
+                  </div>
+
+                  <div class="col-auto d-none lg:d-block">
+                    <button data-x-click="filterPopup" class="button -blue-1 h-40 px-20 rounded-100 bg-teal-1-05 text-15 teal-1">
+                      <i class="icon-up-down text-14 mr-10"></i>
+                      Filter
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="filterPopup bg-white" data-x="filterPopup" data-x-toggle="-is-active">
+              <aside class="sidebar -mobile-filter">
+                <div data-x-click="filterPopup" class="-icon-close">
+                  <i class="icon-close"></i>
+                </div>
+
+                <div class="sidebar__item">
+                  <div class="flex-center ratio ratio-15:9 js-lazy" data-bg="GTrip/img/general/map.png">
+                    <button class="button py-15 px-24 -blue-1 bg-white text-dark-1 absolute" data-x-click="mapFilter">
+                      <i class="icon-destination text-22 mr-10"></i>
+                      Show on map
+                    </button>
+                  </div>
+                </div>
+
+                <div class="sidebar__item">
+                  <h5 class="text-18 fw-500 mb-10">Search by property name</h5>
+                  <div class="single-field relative d-flex items-center py-10">
+                    <input class="pl-50 border-light text-dark-1 h-50 rounded-8" type="email" placeholder="e.g. Best Western">
+                    <button class="absolute d-flex items-center h-full">
+                      <i class="icon-search text-20 px-15 text-dark-1"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="sidebar__item">
+                  <h5 class="text-18 fw-500 mb-10">Deals</h5>
+                  <div class="sidebar-checkbox">
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+                        <div class="d-flex items-center">
+                          <div class="form-checkbox">
+                            <input type="checkbox">
+                            <div class="form-checkbox__mark">
+                              <div class="form-checkbox__icon icon-check"></div>
+                            </div>
+                          </div>
+                          <div class="text-15 ml-10">Free cancellation</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+                        <div class="d-flex items-center">
+                          <div class="form-checkbox">
+                            <input type="checkbox">
+                            <div class="form-checkbox__mark">
+                              <div class="form-checkbox__icon icon-check"></div>
+                            </div>
+                          </div>
+                          <div class="text-15 ml-10">Reserve now, pay at stay </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+                        <div class="d-flex items-center">
+                          <div class="form-checkbox">
+                            <input type="checkbox">
+                            <div class="form-checkbox__mark">
+                              <div class="form-checkbox__icon icon-check"></div>
+                            </div>
+                          </div>
+                          <div class="text-15 ml-10">Properties with special offers</div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="sidebar__item">
+                  <h5 class="text-18 fw-500 mb-10">Popular Filters</h5>
+                  <div class="sidebar-checkbox">
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+                        <div class="d-flex items-center">
+                          <div class="form-checkbox">
+                            <input type="checkbox">
+                            <div class="form-checkbox__mark">
+                              <div class="form-checkbox__icon icon-check"></div>
+                            </div>
+                          </div>
+                          <div class="text-15 ml-10">Breakfast Included</div>
+                        </div>
+                      </div>
+
+                      <div class="col-auto">
+                        <div class="text-15 text-light-1">92</div>
+                      </div>
+                    </div>
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+                        <div class="d-flex items-center">
+                          <div class="form-checkbox">
+                            <input type="checkbox">
+                            <div class="form-checkbox__mark">
+                              <div class="form-checkbox__icon icon-check"></div>
+                            </div>
+                          </div>
+                          <div class="text-15 ml-10">Romantic</div>
+                        </div>
+                      </div>
+
+                      <div class="col-auto">
+                        <div class="text-15 text-light-1">45</div>
+                      </div>
+                    </div>
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+                        <div class="d-flex items-center">
+                          <div class="form-checkbox">
+                            <input type="checkbox">
+                            <div class="form-checkbox__mark">
+                              <div class="form-checkbox__icon icon-check"></div>
+                            </div>
+                          </div>
+                          <div class="text-15 ml-10">Airport Transfer</div>
+                        </div>
+                      </div>
+
+                      <div class="col-auto">
+                        <div class="text-15 text-light-1">21</div>
+                      </div>
+                    </div>
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+                        <div class="d-flex items-center">
+                          <div class="form-checkbox">
+                            <input type="checkbox">
+                            <div class="form-checkbox__mark">
+                              <div class="form-checkbox__icon icon-check"></div>
+                            </div>
+                          </div>
+                          <div class="text-15 ml-10">WiFi Included </div>
+                        </div>
+                      </div>
+
+                      <div class="col-auto">
+                        <div class="text-15 text-light-1">78</div>
+                      </div>
+                    </div>
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+                        <div class="d-flex items-center">
+                          <div class="form-checkbox">
+                            <input type="checkbox">
+                            <div class="form-checkbox__mark">
+                              <div class="form-checkbox__icon icon-check"></div>
+                            </div>
+                          </div>
+                          <div class="text-15 ml-10">5 Star</div>
+                        </div>
+                      </div>
+
+                      <div class="col-auto">
+                        <div class="text-15 text-light-1">679</div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="sidebar__item pb-30">
+                  <h5 class="text-18 fw-500 mb-10">Nightly Price</h5>
+                  <div class="row x-gap-10 y-gap-30">
+                    <div class="col-12">
+                      <div class="js-price-rangeSlider">
+                        <div class="text-14 fw-500"></div>
+
+                        <div class="d-flex justify-between mb-20">
+                          <div class="text-15 text-dark-1">
+                            <span class="js-lower"></span>
+                            -
+                            <span class="js-upper"></span>
+                          </div>
+                        </div>
+
+                        <div class="px-5">
+                          <div class="js-slider"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sidebar__item">
+                  <h5 class="text-18 fw-500 mb-10">Amenities</h5>
+                  <div class="sidebar-checkbox">
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+
+                        <div class="d-flex items-center">
+                          <div class="form-checkbox ">
+                            <input type="checkbox" name="name">
+                            <div class="form-checkbox__mark">
+                              <div class="form-checkbox__icon icon-check"></div>
+                            </div>
+                          </div>
+
+                          <div class="text-15 ml-10">Breakfast Included</div>
+
+                        </div>
+
+                      </div>
+
+                      <div class="col-auto">
+                        <div class="text-15 text-light-1">92</div>
+                      </div>
+                    </div>
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+
+                        <div class="d-flex items-center">
+                          <div class="form-checkbox ">
+                            <input type="checkbox" name="name">
+                            <div class="form-checkbox__mark">
+                              <div class="form-checkbox__icon icon-check"></div>
+                            </div>
+                          </div>
+
+                          <div class="text-15 ml-10">WiFi Included </div>
+
+                        </div>
+
+                      </div>
+
+                      <div class="col-auto">
+                        <div class="text-15 text-light-1">45</div>
+                      </div>
+                    </div>
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+
+                        <div class="d-flex items-center">
+                          <div class="form-checkbox ">
+                            <input type="checkbox" name="name">
+                            <div class="form-checkbox__mark">
+                              <div class="form-checkbox__icon icon-check"></div>
+                            </div>
+                          </div>
+
+                          <div class="text-15 ml-10">Pool</div>
+
+                        </div>
+
+                      </div>
+
+                      <div class="col-auto">
+                        <div class="text-15 text-light-1">21</div>
+                      </div>
+                    </div>
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+
+                        <div class="d-flex items-center">
+                          <div class="form-checkbox ">
+                            <input type="checkbox" name="name">
+                            <div class="form-checkbox__mark">
+                              <div class="form-checkbox__icon icon-check"></div>
+                            </div>
+                          </div>
+
+                          <div class="text-15 ml-10">Restaurant </div>
+
+                        </div>
+
+                      </div>
+
+                      <div class="col-auto">
+                        <div class="text-15 text-light-1">78</div>
+                      </div>
+                    </div>
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+
+                        <div class="d-flex items-center">
+                          <div class="form-checkbox ">
+                            <input type="checkbox" name="name">
+                            <div class="form-checkbox__mark">
+                              <div class="form-checkbox__icon icon-check"></div>
+                            </div>
+                          </div>
+
+                          <div class="text-15 ml-10">Air conditioning </div>
+
+                        </div>
+
+                      </div>
+
+                      <div class="col-auto">
+                        <div class="text-15 text-light-1">679</div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="sidebar__item">
+                  <h5 class="text-18 fw-500 mb-10">Star Rating</h5>
+                  <div class="row y-gap-10 x-gap-10 pt-10">
+
+                    <div class="col-auto">
+                      <a href="#" class="button -blue-1 bg-teal-1-05 teal-1 py-5 px-20 rounded-100">1</a>
+                    </div>
+
+                    <div class="col-auto">
+                      <a href="#" class="button -blue-1 bg-teal-1-05 teal-1 py-5 px-20 rounded-100">2</a>
+                    </div>
+
+                    <div class="col-auto">
+                      <a href="#" class="button -blue-1 bg-teal-1-05 teal-1 py-5 px-20 rounded-100">3</a>
+                    </div>
+
+                    <div class="col-auto">
+                      <a href="#" class="button -blue-1 bg-teal-1-05 teal-1 py-5 px-20 rounded-100">4</a>
+                    </div>
+
+                    <div class="col-auto">
+                      <a href="#" class="button -blue-1 bg-teal-1-05 teal-1 py-5 px-20 rounded-100">5</a>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="sidebar__item">
+                  <h5 class="text-18 fw-500 mb-10">Guest Rating</h5>
+                  <div class="sidebar-checkbox">
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+
+                        <div class="form-radio d-flex items-center ">
+                          <div class="radio">
+                            <input type="radio" name="name">
+                            <div class="radio__mark">
+                              <div class="radio__icon"></div>
+                            </div>
+                          </div>
+                          <div class="ml-10">Any</div>
+                        </div>
+
+                      </div>
+
+                      <div class="col-auto">
+                        <div class="text-15 text-light-1">92</div>
+                      </div>
+                    </div>
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+
+                        <div class="form-radio d-flex items-center ">
+                          <div class="radio">
+                            <input type="radio" name="name">
+                            <div class="radio__mark">
+                              <div class="radio__icon"></div>
+                            </div>
+                          </div>
+                          <div class="ml-10">Wonderful 4.5+</div>
+                        </div>
+
+                      </div>
+
+                      <div class="col-auto">
+                        <div class="text-15 text-light-1">45</div>
+                      </div>
+                    </div>
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+
+                        <div class="form-radio d-flex items-center ">
+                          <div class="radio">
+                            <input type="radio" name="name">
+                            <div class="radio__mark">
+                              <div class="radio__icon"></div>
+                            </div>
+                          </div>
+                          <div class="ml-10">Very good 4+</div>
+                        </div>
+
+                      </div>
+
+                      <div class="col-auto">
+                        <div class="text-15 text-light-1">21</div>
+                      </div>
+                    </div>
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+
+                        <div class="form-radio d-flex items-center ">
+                          <div class="radio">
+                            <input type="radio" name="name">
+                            <div class="radio__mark">
+                              <div class="radio__icon"></div>
+                            </div>
+                          </div>
+                          <div class="ml-10">Good 3.5+ </div>
+                        </div>
+
+                      </div>
+
+                      <div class="col-auto">
+                        <div class="text-15 text-light-1">78</div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="sidebar__item">
+                  <h5 class="text-18 fw-500 mb-10">Style</h5>
+                  <div class="sidebar-checkbox">
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+
+                        <div class="d-flex items-center">
+                          <div class="form-checkbox ">
+                            <input type="checkbox" name="name">
+                            <div class="form-checkbox__mark">
+                              <div class="form-checkbox__icon icon-check"></div>
+                            </div>
+                          </div>
+
+                          <div class="text-15 ml-10">Budget</div>
+
+                        </div>
+
+                      </div>
+
+                      <div class="col-auto">
+                        <div class="text-15 text-light-1">92</div>
+                      </div>
+                    </div>
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+
+                        <div class="d-flex items-center">
+                          <div class="form-checkbox ">
+                            <input type="checkbox" name="name">
+                            <div class="form-checkbox__mark">
+                              <div class="form-checkbox__icon icon-check"></div>
+                            </div>
+                          </div>
+
+                          <div class="text-15 ml-10">Mid-range </div>
+
+                        </div>
+
+                      </div>
+
+                      <div class="col-auto">
+                        <div class="text-15 text-light-1">45</div>
+                      </div>
+                    </div>
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+
+                        <div class="d-flex items-center">
+                          <div class="form-checkbox ">
+                            <input type="checkbox" name="name">
+                            <div class="form-checkbox__mark">
+                              <div class="form-checkbox__icon icon-check"></div>
+                            </div>
+                          </div>
+
+                          <div class="text-15 ml-10">Luxury</div>
+
+                        </div>
+
+                      </div>
+
+                      <div class="col-auto">
+                        <div class="text-15 text-light-1">21</div>
+                      </div>
+                    </div>
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+
+                        <div class="d-flex items-center">
+                          <div class="form-checkbox ">
+                            <input type="checkbox" name="name">
+                            <div class="form-checkbox__mark">
+                              <div class="form-checkbox__icon icon-check"></div>
+                            </div>
+                          </div>
+
+                          <div class="text-15 ml-10">Family-friendly </div>
+
+                        </div>
+
+                      </div>
+
+                      <div class="col-auto">
+                        <div class="text-15 text-light-1">78</div>
+                      </div>
+                    </div>
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+
+                        <div class="d-flex items-center">
+                          <div class="form-checkbox ">
+                            <input type="checkbox" name="name">
+                            <div class="form-checkbox__mark">
+                              <div class="form-checkbox__icon icon-check"></div>
+                            </div>
+                          </div>
+
+                          <div class="text-15 ml-10">Business </div>
+
+                        </div>
+
+                      </div>
+
+                      <div class="col-auto">
+                        <div class="text-15 text-light-1">679</div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="sidebar__item">
+                  <h5 class="text-18 fw-500 mb-10">Neighborhood</h5>
+                  <div class="sidebar-checkbox">
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+
+                        <div class="d-flex items-center">
+                          <div class="form-checkbox ">
+                            <input type="checkbox" name="name">
+                            <div class="form-checkbox__mark">
+                              <div class="form-checkbox__icon icon-check"></div>
+                            </div>
+                          </div>
+
+                          <div class="text-15 ml-10">Central </div>
+
+                        </div>
+
+                      </div>
+
+                      <div class="col-auto">
+                        <div class="text-15 text-light-1">92</div>
+                      </div>
+                    </div>
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+
+                        <div class="d-flex items-center">
+                          <div class="form-checkbox ">
+                            <input type="checkbox" name="name">
+                            <div class="form-checkbox__mark">
+                              <div class="form-checkbox__icon icon-check"></div>
+                            </div>
+                          </div>
+
+                          <div class="text-15 ml-10">Guests&#39; favourite area </div>
+
+                        </div>
+
+                      </div>
+
+                      <div class="col-auto">
+                        <div class="text-15 text-light-1">45</div>
+                      </div>
+                    </div>
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+
+                        <div class="d-flex items-center">
+                          <div class="form-checkbox ">
+                            <input type="checkbox" name="name">
+                            <div class="form-checkbox__mark">
+                              <div class="form-checkbox__icon icon-check"></div>
+                            </div>
+                          </div>
+
+                          <div class="text-15 ml-10">Edinburgh Old Town</div>
+
+                        </div>
+
+                      </div>
+
+                      <div class="col-auto">
+                        <div class="text-15 text-light-1">21</div>
+                      </div>
+                    </div>
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+
+                        <div class="d-flex items-center">
+                          <div class="form-checkbox ">
+                            <input type="checkbox" name="name">
+                            <div class="form-checkbox__mark">
+                              <div class="form-checkbox__icon icon-check"></div>
+                            </div>
+                          </div>
+
+                          <div class="text-15 ml-10">Morningside </div>
+
+                        </div>
+
+                      </div>
+
+                      <div class="col-auto">
+                        <div class="text-15 text-light-1">78</div>
+                      </div>
+                    </div>
+
+                    <div class="row items-center justify-between">
+                      <div class="col-auto">
+
+                        <div class="d-flex items-center">
+                          <div class="form-checkbox ">
+                            <input type="checkbox" name="name">
+                            <div class="form-checkbox__mark">
+                              <div class="form-checkbox__icon icon-check"></div>
+                            </div>
+                          </div>
+
+                          <div class="text-15 ml-10">Oxford Street </div>
+
+                        </div>
+
+                      </div>
+
+                      <div class="col-auto">
+                        <div class="text-15 text-light-1">679</div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </aside>
+            </div>
+
+            <div class="mt-30"></div>
+
+            <div class="row shuffleDivs y-gap-30">
+
+              <div class="col-12 toshuffle">
+
+                <div class="border-top-light pt-30">
+                  <div class="row x-gap-20 y-gap-20">
+                    <div class="col-md-auto">
+
+                      <div class="cardImage ratio ratio-1:1 w-250 md:w-1/1 rounded-4">
+                        <div class="cardImage__content">
+
+                          <img class="rounded-4 col-12" src="GTrip/img/lists/hotel/1/1.png" alt="image">
+
+
+                        </div>
+
+                        <div class="cardImage__wishlist">
+                          <button class="button -blue-1 bg-white size-30 rounded-full shadow-2">
+                            <i class="icon-heart text-12"></i>
+                          </button>
+                        </div>
+
+
+                      </div>
+
+                    </div>
+
+                    <div class="col-md">
+                      <h3 class="text-18 lh-16 fw-500">
+                        <a href="hotel-single-1.html">The Portpatrick Hotel</a>
+
+                        <div class="d-inline-block ml-10">
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                        </div>
+                      </h3>
+
+                      <div class="row x-gap-10 y-gap-10 items-center pt-10">
+                        <div class="col-auto">
+                          <p class="text-14">Morningside</p>
+                        </div>
+
+                        <div class="col-auto">
+                          
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="size-3 rounded-full bg-light-1"></div>
+                        </div>
+
+                        <div class="col-auto">
+                          <p class="text-14">2 km to city center</p>
+                        </div>
+                      </div>
+
+                      <div class="text-14 lh-15 mt-20">
+                        <div class="fw-500">King Room</div>
+                        <div class="text-light-1">1 extra-large double bed</div>
+                      </div>
+
+                      <div class="text-14 text-green-2 lh-15 mt-10">
+
+                      </div>
+
+                      <div class="row x-gap-10 y-gap-10 pt-20">
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Breakfast</div>
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">WiFi</div>
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Spa</div>
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Bar</div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="col-md-auto text-right md:text-left">
+                      <div class="row x-gap-10 y-gap-10 justify-end items-center md:justify-start">
+                        <div class="col-auto">
+                          <div class="text-14 lh-14 fw-500">Exceptional</div>
+                          <div class="text-14 lh-14 text-light-1">3,014 reviews</div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="flex-center text-white fw-600 text-14 size-40 rounded-4 bg-teal-1">4.8</div>
+                        </div>
+                      </div>
+
+                      <div class="">
+                        <div class="text-14 text-light-1 mt-50 md:mt-20">per person/per night</div>
+                        <div class="text-22 lh-12 fw-600 mt-5">€ 72,00</div>
+
+
+                        <a href="hotel.html" class="button -md -dark-1 bg-teal-1 text-white mt-24">check rates <div class="icon-arrow-top-right ml-15"></div></a>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-12 toshuffle">
+
+                <div class="border-top-light pt-30">
+                  <div class="row x-gap-20 y-gap-20">
+                    <div class="col-md-auto">
+
+                      <div class="cardImage ratio ratio-1:1 w-250 md:w-1/1 rounded-4">
+                        <div class="cardImage__content">
+
+
+                          <div class="cardImage-slider rounded-4 overflow-hidden js-cardImage-slider">
+                            <div class="swiper-wrapper">
+
+                              <div class="swiper-slide">
+                                <img class="col-12" src="GTrip/img/lists/hotel/1/2.png" alt="image">
+                              </div>
+
+                              <div class="swiper-slide">
+                                <img class="col-12" src="GTrip/img/lists/hotel/1/1.png" alt="image">
+                              </div>
+
+                              <div class="swiper-slide">
+                                <img class="col-12" src="GTrip/img/lists/hotel/1/3.png" alt="image">
+                              </div>
+
+                            </div>
+
+                            <div class="cardImage-slider__pagination js-pagination"></div>
+
+                            <div class="cardImage-slider__nav -prev">
+                              <button class="button -blue-1 bg-white size-30 rounded-full shadow-2 js-prev">
+                                <i class="icon-chevron-left text-10"></i>
+                              </button>
+                            </div>
+
+                            <div class="cardImage-slider__nav -next">
+                              <button class="button -blue-1 bg-white size-30 rounded-full shadow-2 js-next">
+                                <i class="icon-chevron-right text-10"></i>
+                              </button>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div class="cardImage__wishlist">
+                          <button class="button -blue-1 bg-white size-30 rounded-full shadow-2">
+                            <i class="icon-heart text-12"></i>
+                          </button>
+                        </div>
+
+
+                      </div>
+
+                    </div>
+
+                    <div class="col-md">
+                      <h3 class="text-18 lh-16 fw-500">
+                        <a href="hotel-single-1.html">Loch Ness Lodge - 5 Star</a>
+
+                        <div class="d-inline-block ml-10">
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                        </div>
+                      </h3>
+
+                      <div class="row x-gap-10 y-gap-10 items-center pt-10">
+                        <div class="col-auto">
+                          <p class="text-14">Edinburgh New Town</p>
+                        </div>
+
+                        <div class="col-auto">
+                          
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="size-3 rounded-full bg-light-1"></div>
+                        </div>
+
+                        <div class="col-auto">
+                          <p class="text-14">4 km to city center</p>
+                        </div>
+                      </div>
+
+                      <div class="text-14 lh-15 mt-20">
+                        <div class="fw-500">King Room</div>
+                        <div class="text-light-1">1 extra-large double bed</div>
+                      </div>
+
+                      <div class="text-14 text-green-2 lh-15 mt-10">
+                        <div class="fw-500">Free cancellation</div>
+                        <div class="">You can cancel later, so lock in this great price today.</div>
+                      </div>
+
+                      <div class="row x-gap-10 y-gap-10 pt-20">
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Breakfast</div>
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">WiFi</div>
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Spa</div>
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Bar</div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="col-md-auto text-right md:text-left">
+                      <div class="row x-gap-10 y-gap-10 justify-end items-center md:justify-start">
+                        <div class="col-auto">
+                          <div class="text-14 lh-14 fw-500">Very Good</div>
+                          <div class="text-14 lh-14 text-light-1">1,101 reviews</div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="flex-center text-white fw-600 text-14 size-40 rounded-4 bg-teal-1">4.2</div>
+                        </div>
+                      </div>
+
+                      <div class="">
+                        <div class="text-14 text-light-1 mt-50 md:mt-20">per person/per night</div>
+                        <div class="text-22 lh-12 fw-600 mt-5">€ 89,00</div>
+
+
+                        <a href="hotel.html" class="button -md -dark-1 bg-teal-1 text-white mt-24">check rates <div class="icon-arrow-top-right ml-15"></div></a>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-12 toshuffle">
+
+                <div class="border-top-light pt-30">
+                  <div class="row x-gap-20 y-gap-20">
+                    <div class="col-md-auto">
+
+                      <div class="cardImage ratio ratio-1:1 w-250 md:w-1/1 rounded-4">
+                        <div class="cardImage__content">
+
+                          <img class="rounded-4 col-12" src="GTrip/img/lists/hotel/1/3.png" alt="image">
+
+
+                        </div>
+
+                        <div class="cardImage__wishlist">
+                          <button class="button -blue-1 bg-white size-30 rounded-full shadow-2">
+                            <i class="icon-heart text-12"></i>
+                          </button>
+                        </div>
+
+
+                      </div>
+
+                    </div>
+
+                    <div class="col-md">
+                      <h3 class="text-18 lh-16 fw-500">
+                        <a href="hotel-single-1.html">The Buccleuch Arms Hotel</a>
+
+                        <div class="d-inline-block ml-10">
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                        </div>
+                      </h3>
+
+                      <div class="row x-gap-10 y-gap-10 items-center pt-10">
+                        <div class="col-auto">
+                          <p class="text-14">Fountainbridge</p>
+                        </div>
+
+                        <div class="col-auto">
+                          
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="size-3 rounded-full bg-light-1"></div>
+                        </div>
+
+                        <div class="col-auto">
+                          <p class="text-14">2.7 km to city center</p>
+                        </div>
+                      </div>
+
+                      <div class="text-14 lh-15 mt-20">
+                        <div class="fw-500">King Room</div>
+                        <div class="text-light-1">1 extra-large double bed</div>
+                      </div>
+
+                      <div class="text-14 text-green-2 lh-15 mt-10">
+                      </div>
+
+                      <div class="row x-gap-10 y-gap-10 pt-20">
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Breakfast</div>
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">WiFi</div>
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Spa</div>
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Bar</div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="col-md-auto text-right md:text-left">
+                      <div class="row x-gap-10 y-gap-10 justify-end items-center md:justify-start">
+                        <div class="col-auto">
+                          <div class="text-14 lh-14 fw-500">Very Good</div>
+                          <div class="text-14 lh-14 text-light-1">602 reviews</div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="flex-center text-white fw-600 text-14 size-40 rounded-4 bg-teal-1">4.3</div>
+                        </div>
+                      </div>
+
+                      <div class="">
+                        <div class="text-14 text-light-1 mt-50 md:mt-20">per person/per night</div>
+                        <div class="text-22 lh-12 fw-600 mt-5">€ 102,00</div>
+
+
+                        <a href="hotel.html" class="button -md -dark-1 bg-teal-1 text-white mt-24">check rates <div class="icon-arrow-top-right ml-15"></div></a>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-12 toshuffle">
+
+                <div class="border-top-light pt-30">
+                  <div class="row x-gap-20 y-gap-20">
+                    <div class="col-md-auto">
+
+                      <div class="cardImage ratio ratio-1:1 w-250 md:w-1/1 rounded-4">
+                        <div class="cardImage__content">
+
+                          <img class="rounded-4 col-12" src="GTrip/img/lists/hotel/1/4.png" alt="image">
+
+
+                        </div>
+
+                        <div class="cardImage__wishlist">
+                          <button class="button -blue-1 bg-white size-30 rounded-full shadow-2">
+                            <i class="icon-heart text-12"></i>
+                          </button>
+                        </div>
+
+
+                      </div>
+
+                    </div>
+
+                    <div class="col-md">
+                      <h3 class="text-18 lh-16 fw-500">
+                        <a href="hotel-single-1.html">Bonkle House</a>
+
+                        <div class="d-inline-block ml-10">
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                        </div>
+                      </h3>
+
+                      <div class="row x-gap-10 y-gap-10 items-center pt-10">
+                        <div class="col-auto">
+                          <p class="text-14">Abbeyhill</p>
+                        </div>
+
+                        <div class="col-auto">
+                          
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="size-3 rounded-full bg-light-1"></div>
+                        </div>
+
+                        <div class="col-auto">
+                          <p class="text-14">7.8 km to city center</p>
+                        </div>
+                      </div>
+
+                      <div class="text-14 lh-15 mt-20">
+                        <div class="fw-500">King Room</div>
+                        <div class="text-light-1">1 extra-large double bed</div>
+                      </div>
+
+                      <div class="text-14 text-green-2 lh-15 mt-10">
+                        <div class="fw-500">Free cancellation</div>
+                        <div class="">You can cancel later, so lock in this great price today.</div>
+                      </div>
+
+                      <div class="row x-gap-10 y-gap-10 pt-20">
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Breakfast</div>
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">WiFi</div>
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Spa</div>
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Bar</div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="col-md-auto text-right md:text-left">
+                      <div class="row x-gap-10 y-gap-10 justify-end items-center md:justify-start">
+                        <div class="col-auto">
+                          <div class="text-14 lh-14 fw-500">Exceptional</div>
+                          <div class="text-14 lh-14 text-light-1">2,014 reviews</div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="flex-center text-white fw-600 text-14 size-40 rounded-4 bg-teal-1">4.8</div>
+                        </div>
+                      </div>
+
+                      <div class="">
+                        <div class="text-14 text-light-1 mt-50 md:mt-20">per person/per night</div>
+                        <div class="text-22 lh-12 fw-600 mt-5">€ 92,00</div>
+
+
+                        <a href="hotel.html" class="button -md -dark-1 bg-teal-1 text-white mt-24">check rates <div class="icon-arrow-top-right ml-15"></div></a>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-12 toshuffle">
+
+                <div class="border-top-light pt-30">
+                  <div class="row x-gap-20 y-gap-20">
+                    <div class="col-md-auto">
+
+                      <div class="cardImage ratio ratio-1:1 w-250 md:w-1/1 rounded-4">
+                        <div class="cardImage__content">
+
+                          <img class="rounded-4 col-12" src="GTrip/img/lists/hotel/1/5.png" alt="image">
+
+
+                        </div>
+
+                        <div class="cardImage__wishlist">
+                          <button class="button -blue-1 bg-white size-30 rounded-full shadow-2">
+                            <i class="icon-heart text-12"></i>
+                          </button>
+                        </div>
+
+
+                      </div>
+
+                    </div>
+
+                    <div class="col-md">
+                      <h3 class="text-18 lh-16 fw-500">
+                        <a href="hotel-single-1.html">The Torridon on hills</a>
+
+                        <div class="d-inline-block ml-10">
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                        </div>
+                      </h3>
+
+                      <div class="row x-gap-10 y-gap-10 items-center pt-10">
+                        <div class="col-auto">
+                          <p class="text-14">Stockbridge</p>
+                        </div>
+
+                        <div class="col-auto">
+                          
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="size-3 rounded-full bg-light-1"></div>
+                        </div>
+
+                        <div class="col-auto">
+                          <p class="text-14">0.8 km to city center</p>
+                        </div>
+                      </div>
+
+                      <div class="text-14 lh-15 mt-20">
+                        <div class="fw-500">King Room</div>
+                        <div class="text-light-1">1 extra-large double bed</div>
+                      </div>
+
+                      <div class="text-14 text-green-2 lh-15 mt-10">
+                      </div>
+
+                      <div class="row x-gap-10 y-gap-10 pt-20">
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Breakfast</div>
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">WiFi</div>
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Spa</div>
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Bar</div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="col-md-auto text-right md:text-left">
+                      <div class="row x-gap-10 y-gap-10 justify-end items-center md:justify-start">
+                        <div class="col-auto">
+                          <div class="text-14 lh-14 fw-500">Good</div>
+                          <div class="text-14 lh-14 text-light-1">207 reviews</div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="flex-center text-white fw-600 text-14 size-40 rounded-4 bg-teal-1">3.8</div>
+                        </div>
+                      </div>
+
+                      <div class="">
+                        <div class="text-14 text-light-1 mt-50 md:mt-20">per person/per night</div>
+                        <div class="text-22 lh-12 fw-600 mt-5">€ 133,00</div>
+
+
+                        <a href="hotel.html" class="button -md -dark-1 bg-teal-1 text-white mt-24">check rates <div class="icon-arrow-top-right ml-15"></div></a>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-12 toshuffle">
+
+                <div class="border-top-light pt-30">
+                  <div class="row x-gap-20 y-gap-20">
+                    <div class="col-md-auto">
+
+                      <div class="cardImage ratio ratio-1:1 w-250 md:w-1/1 rounded-4">
+                        <div class="cardImage__content">
+
+                          <img class="rounded-4 col-12" src="GTrip/img/lists/hotel/1/6.png" alt="image">
+
+
+                        </div>
+
+                        <div class="cardImage__wishlist">
+                          <button class="button -blue-1 bg-white size-30 rounded-full shadow-2">
+                            <i class="icon-heart text-12"></i>
+                          </button>
+                        </div>
+
+
+                      </div>
+
+                    </div>
+
+                    <div class="col-md">
+                      <h3 class="text-18 lh-16 fw-500">
+                        <a href="hotel-single-1.html">DoubleTree by Hilton Dunblane Hydro</a>
+
+                        <div class="d-inline-block ml-10">
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                        </div>
+                      </h3>
+
+                      <div class="row x-gap-10 y-gap-10 items-center pt-10">
+                        <div class="col-auto">
+                          <p class="text-14">Comely Bank</p>
+                        </div>
+
+                        <div class="col-auto">
+                          
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="size-3 rounded-full bg-light-1"></div>
+                        </div>
+
+                        <div class="col-auto">
+                          <p class="text-14">2.9 km to city center</p>
+                        </div>
+                      </div>
+
+                      <div class="text-14 lh-15 mt-20">
+                        <div class="fw-500">King Room</div>
+                        <div class="text-light-1">1 extra-large double bed</div>
+                      </div>
+
+                      <div class="text-14 text-green-2 lh-15 mt-10">
+                      </div>
+
+                      <div class="row x-gap-10 y-gap-10 pt-20">
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Breakfast</div>
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">WiFi</div>
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Spa</div>
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Bar</div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="col-md-auto text-right md:text-left">
+                      <div class="row x-gap-10 y-gap-10 justify-end items-center md:justify-start">
+                        <div class="col-auto">
+                          <div class="text-14 lh-14 fw-500">Perfect</div>
+                          <div class="text-14 lh-14 text-light-1">1,201 reviews</div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="flex-center text-white fw-600 text-14 size-40 rounded-4 bg-teal-1">4.0</div>
+                        </div>
+                      </div>
+
+                      <div class="">
+                        <div class="text-14 text-light-1 mt-50 md:mt-20">per person/per night</div>
+                        <div class="text-22 lh-12 fw-600 mt-5">€ 88,90</div>
+
+
+                        <a href="hotel.html" class="button -md -dark-1 bg-teal-1 text-white mt-24">check rates <div class="icon-arrow-top-right ml-15"></div></a>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-12 toshuffle">
+
+                <div class="border-top-light pt-30">
+                  <div class="row x-gap-20 y-gap-20">
+                    <div class="col-md-auto">
+
+                      <div class="cardImage ratio ratio-1:1 w-250 md:w-1/1 rounded-4">
+                        <div class="cardImage__content">
+
+                          <img class="rounded-4 col-12" src="GTrip/img/lists/hotel/1/7.png" alt="image">
+
+
+                        </div>
+
+                        <div class="cardImage__wishlist">
+                          <button class="button -blue-1 bg-white size-30 rounded-full shadow-2">
+                            <i class="icon-heart text-12"></i>
+                          </button>
+                        </div>
+
+
+                      </div>
+
+                    </div>
+
+                    <div class="col-md">
+                      <h3 class="text-18 lh-16 fw-500">
+                        <a href="hotel-single-1.html">Harbour Spring by Marston's Inns</a>
+
+                        <div class="d-inline-block ml-10">
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                          <i class="icon-star text-10 text-yellow-2"></i>
+                        </div>
+                      </h3>
+
+                      <div class="row x-gap-10 y-gap-10 items-center pt-10">
+                        <div class="col-auto">
+                          <p class="text-14">Fountainbridge</p>
+                        </div>
+
+                        <div class="col-auto">
+                          
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="size-3 rounded-full bg-light-1"></div>
+                        </div>
+
+                        <div class="col-auto">
+                          <p class="text-14">4.4 km to city center</p>
+                        </div>
+                      </div>
+
+                      <div class="text-14 lh-15 mt-20">
+                        <div class="fw-500">King Room</div>
+                        <div class="text-light-1">1 extra-large double bed</div>
+                      </div>
+
+                      <div class="text-14 text-green-2 lh-15 mt-10">
+                        <div class="fw-500">Free cancellation</div>
+                        <div class="">You can cancel later, so lock in this great price today.</div>
+                      </div>
+
+                      <div class="row x-gap-10 y-gap-10 pt-20">
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Breakfast</div>
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">WiFi</div>
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Spa</div>
+                        </div>
+
+                        <div class="col-auto">
+                          <div class="border-light rounded-100 py-5 px-20 text-14 lh-14">Bar</div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="col-md-auto text-right md:text-left">
+                      <div class="row x-gap-10 y-gap-10 justify-end items-center md:justify-start">
+                        <div class="col-auto">
+                          <div class="text-14 lh-14 fw-500">Very Good</div>
+                          <div class="text-14 lh-14 text-light-1">907 reviews</div>
+                        </div>
+                        <div class="col-auto">
+                          <div class="flex-center text-white fw-600 text-14 size-40 rounded-4 bg-teal-1">3.8</div>
+                        </div>
+                      </div>
+
+                      <div class="">
+                        <div class="text-14 text-light-1 mt-50 md:mt-20">per person/per night</div>
+                        <div class="text-22 lh-12 fw-600 mt-5">€ 78,90</div>
+
+
+                        <a href="hotel.html" class="button -md -dark-1 bg-teal-1 text-white mt-24">check rates <div class="icon-arrow-top-right ml-15"></div></a>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="border-top-light mt-30 pt-30">
+              <div class="row x-gap-10 y-gap-20 justify-between md:justify-center">
+                <div class="col-auto md:order-1">
+                  <button class="button -blue-1 size-40 rounded-full border-light">
+                    <i class="icon-chevron-left text-12"></i>
+                  </button>
+                </div>
+
+                <div class="col-md-auto md:order-3">
+                  <div class="row x-gap-20 y-gap-20 items-center md:d-none">
+
+                    <div class="col-auto">
+
+                      <div class="size-40 flex-center rounded-full">1</div>
+
+                    </div>
+
+                    <div class="col-auto">
+
+                      <div class="size-40 flex-center rounded-full bg-dark-1 text-white">2</div>
+
+                    </div>
+
+                    <div class="col-auto">
+
+                      <div class="size-40 flex-center rounded-full">3</div>
+
+                    </div>
+
+                    <div class="col-auto">
+
+                      <div class="size-40 flex-center rounded-full bg-light-2">4</div>
+
+                    </div>
+
+                    <div class="col-auto">
+
+                      <div class="size-40 flex-center rounded-full">5</div>
+
+                    </div>
+
+                    <div class="col-auto">
+
+                      <div class="size-40 flex-center rounded-full">...</div>
+
+                    </div>
+
+                    <div class="col-auto">
+
+                      <div class="size-40 flex-center rounded-full">20</div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="row x-gap-10 y-gap-20 justify-center items-center d-none md:d-flex">
+
+                    <div class="col-auto">
+
+                      <div class="size-40 flex-center rounded-full">1</div>
+
+                    </div>
+
+                    <div class="col-auto">
+
+                      <div class="size-40 flex-center rounded-full bg-dark-1 text-white">2</div>
+
+                    </div>
+
+                    <div class="col-auto">
+
+                      <div class="size-40 flex-center rounded-full">3</div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="text-center mt-30 md:mt-10">
+                    <div class="text-14 text-light-1">1 – 20 of 300+ properties found</div>
+                  </div>
+                </div>
+
+                <div class="col-auto md:order-2">
+                  <button class="button -blue-1 size-40 rounded-full border-light">
+                    <i class="icon-chevron-right text-12"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="layout-pt-md layout-pb-md bg-dark-2">
+      <div class="container">
+        <div class="row y-gap-30 justify-between items-center">
+          <div class="col-auto">
+            <div class="row y-gap-20  flex-wrap items-center">
+              <div class="col-auto">
+                <div class="icon-newsletter text-60 sm:text-40 text-white"></div>
+              </div>
+
+              <div class="col-auto">
+                <h4 class="text-26 text-white fw-600">Your Travel Journey Starts Here</h4>
+                <div class="text-white">Sign up to receive our catchy deals first!</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-auto">
+            <div class="single-field -w-410 d-flex x-gap-10 y-gap-20">
+              <div>
+                <input class="bg-white h-60" type="text" placeholder="Your Email">
+              </div>
+
+              <div>
+                <button class="button -md h-60 bg-teal-1 text-white">Subscribe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+	<footer class="p-3 bg-white">
+		<ul class="d-flex nav justify-content-center align-items-center border-bottom pb-3 mb-3" style="color: #697488 !important">
+		  <li class="nav-item"><img src="img/api-app-svgrepo-com.svg" width="40" height="40" /></li>
+		  <li class="nav-item"><a href="https://www.opencrs.cloud/" target="_blank" class="nav-link px-2 text-muted">openCRS</a></li>
+		  <li class="nav-item"><a href="https://www.opencrs.cloud/octa/" target="_blank" class="nav-link px-2 text-muted">openDMS</a></li>
+		  <li class="nav-item"><a href="https://opencrs.atlassian.net/servicedesk/customer/portals" target="_blank" class="nav-link px-2 text-muted">Opsgenie</a></li>
+		  <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">DMS platform</a></li>
+		</ul>
+		<p class="text-center text-muted">© 2025 octaBytes stack</p>
+	</footer>
+  </main>
+
+  <div class="mapFilter" data-x="mapFilter" data-x-toggle="-is-active">
+    <div class="mapFilter__overlay"></div>
+
+    <div class="mapFilter__close">
+      <button class="button -blue-1 size-40 bg-white shadow-2" data-x-click="mapFilter">
+        <i class="icon-close text-15"></i>
+      </button>
+    </div>
+
+    <div class="mapFilter__grid" data-x="mapFilter__grid" data-x-toggle="-filters-hidden">
+      <div class="mapFilter-filter scroll-bar-1">
+        <div class="px-20 py-20 md:px-15 md:py-15">
+          <div class="d-flex items-center justify-between">
+            <div class="text-18 fw-500">Filters</div>
+
+            <button class="size-40 flex-center rounded-full bg-teal-1" data-x-click="mapFilter__grid">
+              <i class="icon-chevron-left text-12 text-white"></i>
+            </button>
+          </div>
+
+          <div class="mapFilter-filter__item">
+            <h5 class="text-18 fw-500 mb-10">Popular Filters</h5>
+            <div class="sidebar-checkbox">
+
+              <div class="row y-gap-10 items-center justify-between">
+                <div class="col-auto">
+                  <div class="d-flex items-center">
+                    <div class="form-checkbox">
+                      <input type="checkbox">
+                      <div class="form-checkbox__mark">
+                        <div class="form-checkbox__icon icon-check"></div>
+                      </div>
+                    </div>
+                    <div class="text-15 ml-10">Breakfast Included</div>
+                  </div>
+                </div>
+
+                <div class="col-auto">
+                  <div class="text-15 text-light-1">92</div>
+                </div>
+              </div>
+
+              <div class="row y-gap-10 items-center justify-between">
+                <div class="col-auto">
+                  <div class="d-flex items-center">
+                    <div class="form-checkbox">
+                      <input type="checkbox">
+                      <div class="form-checkbox__mark">
+                        <div class="form-checkbox__icon icon-check"></div>
+                      </div>
+                    </div>
+                    <div class="text-15 ml-10">Romantic</div>
+                  </div>
+                </div>
+
+                <div class="col-auto">
+                  <div class="text-15 text-light-1">45</div>
+                </div>
+              </div>
+
+              <div class="row y-gap-10 items-center justify-between">
+                <div class="col-auto">
+                  <div class="d-flex items-center">
+                    <div class="form-checkbox">
+                      <input type="checkbox">
+                      <div class="form-checkbox__mark">
+                        <div class="form-checkbox__icon icon-check"></div>
+                      </div>
+                    </div>
+                    <div class="text-15 ml-10">Airport Transfer</div>
+                  </div>
+                </div>
+
+                <div class="col-auto">
+                  <div class="text-15 text-light-1">21</div>
+                </div>
+              </div>
+
+              <div class="row y-gap-10 items-center justify-between">
+                <div class="col-auto">
+                  <div class="d-flex items-center">
+                    <div class="form-checkbox">
+                      <input type="checkbox">
+                      <div class="form-checkbox__mark">
+                        <div class="form-checkbox__icon icon-check"></div>
+                      </div>
+                    </div>
+                    <div class="text-15 ml-10">WiFi Included </div>
+                  </div>
+                </div>
+
+                <div class="col-auto">
+                  <div class="text-15 text-light-1">78</div>
+                </div>
+              </div>
+
+              <div class="row y-gap-10 items-center justify-between">
+                <div class="col-auto">
+                  <div class="d-flex items-center">
+                    <div class="form-checkbox">
+                      <input type="checkbox">
+                      <div class="form-checkbox__mark">
+                        <div class="form-checkbox__icon icon-check"></div>
+                      </div>
+                    </div>
+                    <div class="text-15 ml-10">5 Star</div>
+                  </div>
+                </div>
+
+                <div class="col-auto">
+                  <div class="text-15 text-light-1">679</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="mapFilter-filter__item">
+            <h5 class="text-18 fw-500 mb-10">Rate</h5>
+            <div class="row x-gap-10 y-gap-30">
+              <div class="col-12">
+                <div class="js-price-rangeSlider">
+                  <div class="text-14 fw-500"></div>
+
+                  <div class="d-flex justify-between mb-20">
+                    <div class="text-15 text-dark-1">
+                      <span class="js-lower"></span>
+                      -
+                      <span class="js-upper"></span>
+                    </div>
+                  </div>
+
+                  <div class="px-5">
+                    <div class="js-slider"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mapFilter-filter__item">
+            <h5 class="text-18 fw-500 mb-10">Amenities</h5>
+            <div class="sidebar-checkbox">
+
+              <div class="row y-gap-10 items-center justify-between">
+                <div class="col-auto">
+
+                  <div class="d-flex items-center">
+                    <div class="form-checkbox ">
+                      <input type="checkbox" name="name">
+                      <div class="form-checkbox__mark">
+                        <div class="form-checkbox__icon icon-check"></div>
+                      </div>
+                    </div>
+
+                    <div class="text-15 ml-10">Breakfast Included</div>
+
+                  </div>
+
+                </div>
+
+                <div class="col-auto">
+                  <div class="text-15 text-light-1">92</div>
+                </div>
+              </div>
+
+              <div class="row y-gap-10 items-center justify-between">
+                <div class="col-auto">
+
+                  <div class="d-flex items-center">
+                    <div class="form-checkbox ">
+                      <input type="checkbox" name="name">
+                      <div class="form-checkbox__mark">
+                        <div class="form-checkbox__icon icon-check"></div>
+                      </div>
+                    </div>
+
+                    <div class="text-15 ml-10">WiFi Included </div>
+
+                  </div>
+
+                </div>
+
+                <div class="col-auto">
+                  <div class="text-15 text-light-1">45</div>
+                </div>
+              </div>
+
+              <div class="row y-gap-10 items-center justify-between">
+                <div class="col-auto">
+
+                  <div class="d-flex items-center">
+                    <div class="form-checkbox ">
+                      <input type="checkbox" name="name">
+                      <div class="form-checkbox__mark">
+                        <div class="form-checkbox__icon icon-check"></div>
+                      </div>
+                    </div>
+
+                    <div class="text-15 ml-10">Pool</div>
+
+                  </div>
+
+                </div>
+
+                <div class="col-auto">
+                  <div class="text-15 text-light-1">21</div>
+                </div>
+              </div>
+
+              <div class="row y-gap-10 items-center justify-between">
+                <div class="col-auto">
+
+                  <div class="d-flex items-center">
+                    <div class="form-checkbox ">
+                      <input type="checkbox" name="name">
+                      <div class="form-checkbox__mark">
+                        <div class="form-checkbox__icon icon-check"></div>
+                      </div>
+                    </div>
+
+                    <div class="text-15 ml-10">Restaurant </div>
+
+                  </div>
+
+                </div>
+
+                <div class="col-auto">
+                  <div class="text-15 text-light-1">78</div>
+                </div>
+              </div>
+
+              <div class="row y-gap-10 items-center justify-between">
+                <div class="col-auto">
+
+                  <div class="d-flex items-center">
+                    <div class="form-checkbox ">
+                      <input type="checkbox" name="name">
+                      <div class="form-checkbox__mark">
+                        <div class="form-checkbox__icon icon-check"></div>
+                      </div>
+                    </div>
+
+                    <div class="text-15 ml-10">Air conditioning </div>
+
+                  </div>
+
+                </div>
+
+                <div class="col-auto">
+                  <div class="text-15 text-light-1">679</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="mapFilter-filter__item">
+            <h5 class="text-18 fw-500 mb-10">Star Rating</h5>
+            <div class="row x-gap-10 y-gap-10 pt-10">
+
+              <div class="col-auto">
+                <a href="#" class="button -blue-1 bg-teal-1-05 teal-1 py-5 px-20 rounded-100">1</a>
+              </div>
+
+              <div class="col-auto">
+                <a href="#" class="button -blue-1 bg-teal-1-05 teal-1 py-5 px-20 rounded-100">2</a>
+              </div>
+
+              <div class="col-auto">
+                <a href="#" class="button -blue-1 bg-teal-1-05 teal-1 py-5 px-20 rounded-100">3</a>
+              </div>
+
+              <div class="col-auto">
+                <a href="#" class="button -blue-1 bg-teal-1-05 teal-1 py-5 px-20 rounded-100">4</a>
+              </div>
+
+              <div class="col-auto">
+                <a href="#" class="button -blue-1 bg-teal-1-05 teal-1 py-5 px-20 rounded-100">5</a>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="mapFilter-filter__item">
+            <h5 class="text-18 fw-500 mb-10">Guest Rating</h5>
+            <div class="sidebar-checkbox">
+
+              <div class="row y-gap-10 items-center justify-between">
+                <div class="col-auto">
+
+                  <div class="form-radio d-flex items-center ">
+                    <div class="radio">
+                      <input type="radio" name="name">
+                      <div class="radio__mark">
+                        <div class="radio__icon"></div>
+                      </div>
+                    </div>
+                    <div class="ml-10">Any</div>
+                  </div>
+
+                </div>
+
+                <div class="col-auto">
+                  <div class="text-15 text-light-1">92</div>
+                </div>
+              </div>
+
+              <div class="row y-gap-10 items-center justify-between">
+                <div class="col-auto">
+
+                  <div class="form-radio d-flex items-center ">
+                    <div class="radio">
+                      <input type="radio" name="name">
+                      <div class="radio__mark">
+                        <div class="radio__icon"></div>
+                      </div>
+                    </div>
+                    <div class="ml-10">Wonderful 4.5+</div>
+                  </div>
+
+                </div>
+
+                <div class="col-auto">
+                  <div class="text-15 text-light-1">45</div>
+                </div>
+              </div>
+
+              <div class="row y-gap-10 items-center justify-between">
+                <div class="col-auto">
+
+                  <div class="form-radio d-flex items-center ">
+                    <div class="radio">
+                      <input type="radio" name="name">
+                      <div class="radio__mark">
+                        <div class="radio__icon"></div>
+                      </div>
+                    </div>
+                    <div class="ml-10">Very good 4+</div>
+                  </div>
+
+                </div>
+
+                <div class="col-auto">
+                  <div class="text-15 text-light-1">21</div>
+                </div>
+              </div>
+
+              <div class="row y-gap-10 items-center justify-between">
+                <div class="col-auto">
+
+                  <div class="form-radio d-flex items-center ">
+                    <div class="radio">
+                      <input type="radio" name="name">
+                      <div class="radio__mark">
+                        <div class="radio__icon"></div>
+                      </div>
+                    </div>
+                    <div class="ml-10">Good 3.5+ </div>
+                  </div>
+
+                </div>
+
+                <div class="col-auto">
+                  <div class="text-15 text-light-1">78</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="mapFilter-filter__item">
+            <h5 class="text-18 fw-500 mb-10">Style</h5>
+            <div class="sidebar-checkbox">
+
+              <div class="row y-gap-10 items-center justify-between">
+                <div class="col-auto">
+
+                  <div class="d-flex items-center">
+                    <div class="form-checkbox ">
+                      <input type="checkbox" name="name">
+                      <div class="form-checkbox__mark">
+                        <div class="form-checkbox__icon icon-check"></div>
+                      </div>
+                    </div>
+
+                    <div class="text-15 ml-10">Budget</div>
+
+                  </div>
+
+                </div>
+
+                <div class="col-auto">
+                  <div class="text-15 text-light-1">92</div>
+                </div>
+              </div>
+
+              <div class="row y-gap-10 items-center justify-between">
+                <div class="col-auto">
+
+                  <div class="d-flex items-center">
+                    <div class="form-checkbox ">
+                      <input type="checkbox" name="name">
+                      <div class="form-checkbox__mark">
+                        <div class="form-checkbox__icon icon-check"></div>
+                      </div>
+                    </div>
+
+                    <div class="text-15 ml-10">Mid-range </div>
+
+                  </div>
+
+                </div>
+
+                <div class="col-auto">
+                  <div class="text-15 text-light-1">45</div>
+                </div>
+              </div>
+
+              <div class="row y-gap-10 items-center justify-between">
+                <div class="col-auto">
+
+                  <div class="d-flex items-center">
+                    <div class="form-checkbox ">
+                      <input type="checkbox" name="name">
+                      <div class="form-checkbox__mark">
+                        <div class="form-checkbox__icon icon-check"></div>
+                      </div>
+                    </div>
+
+                    <div class="text-15 ml-10">Luxury</div>
+
+                  </div>
+
+                </div>
+
+                <div class="col-auto">
+                  <div class="text-15 text-light-1">21</div>
+                </div>
+              </div>
+
+              <div class="row y-gap-10 items-center justify-between">
+                <div class="col-auto">
+
+                  <div class="d-flex items-center">
+                    <div class="form-checkbox ">
+                      <input type="checkbox" name="name">
+                      <div class="form-checkbox__mark">
+                        <div class="form-checkbox__icon icon-check"></div>
+                      </div>
+                    </div>
+
+                    <div class="text-15 ml-10">Family-friendly </div>
+
+                  </div>
+
+                </div>
+
+                <div class="col-auto">
+                  <div class="text-15 text-light-1">78</div>
+                </div>
+              </div>
+
+              <div class="row y-gap-10 items-center justify-between">
+                <div class="col-auto">
+
+                  <div class="d-flex items-center">
+                    <div class="form-checkbox ">
+                      <input type="checkbox" name="name">
+                      <div class="form-checkbox__mark">
+                        <div class="form-checkbox__icon icon-check"></div>
+                      </div>
+                    </div>
+
+                    <div class="text-15 ml-10">Business </div>
+
+                  </div>
+
+                </div>
+
+                <div class="col-auto">
+                  <div class="text-15 text-light-1">679</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="mapFilter-filter__item">
+            <h5 class="text-18 fw-500 mb-10">Neighborhood</h5>
+            <div class="sidebar-checkbox">
+
+              <div class="row y-gap-10 items-center justify-between">
+                <div class="col-auto">
+
+                  <div class="d-flex items-center">
+                    <div class="form-checkbox ">
+                      <input type="checkbox" name="name">
+                      <div class="form-checkbox__mark">
+                        <div class="form-checkbox__icon icon-check"></div>
+                      </div>
+                    </div>
+
+                    <div class="text-15 ml-10">Central </div>
+
+                  </div>
+
+                </div>
+
+                <div class="col-auto">
+                  <div class="text-15 text-light-1">92</div>
+                </div>
+              </div>
+
+              <div class="row y-gap-10 items-center justify-between">
+                <div class="col-auto">
+
+                  <div class="d-flex items-center">
+                    <div class="form-checkbox ">
+                      <input type="checkbox" name="name">
+                      <div class="form-checkbox__mark">
+                        <div class="form-checkbox__icon icon-check"></div>
+                      </div>
+                    </div>
+
+                    <div class="text-15 ml-10">Guests&#39; favourite area </div>
+
+                  </div>
+
+                </div>
+
+                <div class="col-auto">
+                  <div class="text-15 text-light-1">45</div>
+                </div>
+              </div>
+
+              <div class="row y-gap-10 items-center justify-between">
+                <div class="col-auto">
+
+                  <div class="d-flex items-center">
+                    <div class="form-checkbox ">
+                      <input type="checkbox" name="name">
+                      <div class="form-checkbox__mark">
+                        <div class="form-checkbox__icon icon-check"></div>
+                      </div>
+                    </div>
+
+                    <div class="text-15 ml-10">Haymarket</div>
+
+                  </div>
+
+                </div>
+
+                <div class="col-auto">
+                  <div class="text-15 text-light-1">21</div>
+                </div>
+              </div>
+
+              <div class="row y-gap-10 items-center justify-between">
+                <div class="col-auto">
+
+                  <div class="d-flex items-center">
+                    <div class="form-checkbox ">
+                      <input type="checkbox" name="name">
+                      <div class="form-checkbox__mark">
+                        <div class="form-checkbox__icon icon-check"></div>
+                      </div>
+                    </div>
+
+                    <div class="text-15 ml-10">Rintlords ave </div>
+
+                  </div>
+
+                </div>
+
+                <div class="col-auto">
+                  <div class="text-15 text-light-1">78</div>
+                </div>
+              </div>
+
+              <div class="row y-gap-10 items-center justify-between">
+                <div class="col-auto">
+
+                  <div class="d-flex items-center">
+                    <div class="form-checkbox ">
+                      <input type="checkbox" name="name">
+                      <div class="form-checkbox__mark">
+                        <div class="form-checkbox__icon icon-check"></div>
+                      </div>
+                    </div>
+
+                    <div class="text-15 ml-10">Belltown Street </div>
+
+                  </div>
+
+                </div>
+
+                <div class="col-auto">
+                  <div class="text-15 text-light-1">679</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mapFilter-results scroll-bar-1">
+        <div class="px-20 py-20 md:px-15 md:py-15">
+          <div class="row y-gap-10 justify-between">
+            <div class="col-auto">
+              <div class="text-14 text-light-1">
+                <span class="text-dark-1 text-15 fw-500">3,269 properties</span>
+                found
+              </div>
+            </div>
+
+            <div class="col-auto">
+              <button class="button -blue-1 h-40 px-20 md:px-5 teal-1 bg-teal-1-05 rounded-100">
+                <i class="icon-up-down mr-10"></i>
+                Top picks for your search
+              </button>
+            </div>
+          </div>
+
+
+          <div class="mapFilter-results__item">
+            <div class="row x-gap-20 y-gap-20">
+              <div class="col-md-auto">
+                <div class="ratio ratio-1:1 size-120">
+                  <img src="GTrip/img/hotels/1.png" alt="image" class="img-ratio rounded-4">
+                </div>
+              </div>
+
+              <div class="col-md">
+                <div class="row x-gap-20 y-gap-10 justify-between">
+                  <div class="col-lg">
+                    <h4 class="text-16 lh-17 fw-500">
+                      The Portpatrick Hotel
+                      <span class="text-10 text-yellow-2">
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                      </span>
+                    </h4>
+                  </div>
+
+                  <div class="col-auto">
+                    <button class="button -blue-1 size-30 flex-center bg-light-2 rounded-full">
+                      <i class="icon-heart text-12"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="row y-gap-10 justify-between items-end pt-24 lg:pt-15">
+                  <div class="col-auto">
+                    <div class="d-flex items-center">
+                      <div class="size-38 rounded-4 flex-center bg-teal-1">
+                        <span class="text-14 fw-600 text-white">4.8</span>
+                      </div>
+
+                      <div class="ml-10">
+                        <div class="text-13 lh-14 fw-500">Great</div>
+                        <div class="text-12 lh-14 text-light-1">3,014 reviews</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-auto">
+                    <div class="d-flex items-center">
+                      <div class="text-14 text-light-1 mr-10">8 nights</div>
+                      <div class="fw-500">€ 99,00</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mapFilter-results__item">
+            <div class="row x-gap-20 y-gap-20">
+              <div class="col-md-auto">
+                <div class="ratio ratio-1:1 size-120">
+                  <img src="GTrip/img/lists/hotel/1/2.png" alt="image" class="img-ratio rounded-4">
+                </div>
+              </div>
+
+              <div class="col-md">
+                <div class="row x-gap-20 y-gap-10 justify-between">
+                  <div class="col-lg">
+                    <h4 class="text-16 lh-17 fw-500">
+                      Loch Ness Lodge - 5 Star
+                      <span class="text-10 text-yellow-2">
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                      </span>
+                    </h4>
+                  </div>
+
+                  <div class="col-auto">
+                    <button class="button -blue-1 size-30 flex-center bg-light-2 rounded-full">
+                      <i class="icon-heart text-12"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="row y-gap-10 justify-between items-end pt-24 lg:pt-15">
+                  <div class="col-auto">
+                    <div class="d-flex items-center">
+                      <div class="size-38 rounded-4 flex-center bg-teal-1">
+                        <span class="text-14 fw-600 text-white">4.2</span>
+                      </div>
+
+                      <div class="ml-10">
+                        <div class="text-13 lh-14 fw-500">Very Good</div>
+                        <div class="text-12 lh-14 text-light-1">1,101 reviews</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-auto">
+                    <div class="d-flex items-center">
+                      <div class="text-14 text-light-1 mr-10">8 nights</div>
+                      <div class="fw-500">€ 72,00</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mapFilter-results__item">
+            <div class="row x-gap-20 y-gap-20">
+              <div class="col-md-auto">
+                <div class="ratio ratio-1:1 size-120">
+                  <img src="GTrip/img/lists/hotel/1/3.png" alt="image" class="img-ratio rounded-4">
+                </div>
+              </div>
+
+              <div class="col-md">
+                <div class="row x-gap-20 y-gap-10 justify-between">
+                  <div class="col-lg">
+                    <h4 class="text-16 lh-17 fw-500">
+                      The Buccleuch Arms Hotel
+                      <span class="text-10 text-yellow-2">
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                      </span>
+                    </h4>
+                  </div>
+
+                  <div class="col-auto">
+                    <button class="button -blue-1 size-30 flex-center bg-light-2 rounded-full">
+                      <i class="icon-heart text-12"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="row y-gap-10 justify-between items-end pt-24 lg:pt-15">
+                  <div class="col-auto">
+                    <div class="d-flex items-center">
+                      <div class="size-38 rounded-4 flex-center bg-teal-1">
+                        <span class="text-14 fw-600 text-white">4.3</span>
+                      </div>
+
+                      <div class="ml-10">
+                        <div class="text-13 lh-14 fw-500">Very Good</div>
+                        <div class="text-12 lh-14 text-light-1">602 reviews</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-auto">
+                    <div class="d-flex items-center">
+                      <div class="text-14 text-light-1 mr-10">8 nights</div>
+                      <div class="fw-500">€ 102,00</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mapFilter-results__item">
+            <div class="row x-gap-20 y-gap-20">
+              <div class="col-md-auto">
+                <div class="ratio ratio-1:1 size-120">
+                  <img src="GTrip/img/lists/hotel/1/4.png" alt="image" class="img-ratio rounded-4">
+                </div>
+              </div>
+
+              <div class="col-md">
+                <div class="row x-gap-20 y-gap-10 justify-between">
+                  <div class="col-lg">
+                    <h4 class="text-16 lh-17 fw-500">
+                      Bonkle House
+                      <span class="text-10 text-yellow-2">
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                      </span>
+                    </h4>
+                  </div>
+
+                  <div class="col-auto">
+                    <button class="button -blue-1 size-30 flex-center bg-light-2 rounded-full">
+                      <i class="icon-heart text-12"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="row y-gap-10 justify-between items-end pt-24 lg:pt-15">
+                  <div class="col-auto">
+                    <div class="d-flex items-center">
+                      <div class="size-38 rounded-4 flex-center bg-teal-1">
+                        <span class="text-14 fw-600 text-white">4.8</span>
+                      </div>
+
+                      <div class="ml-10">
+                        <div class="text-13 lh-14 fw-500">Exceptional</div>
+                        <div class="text-12 lh-14 text-light-1">2,014 reviews</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-auto">
+                    <div class="d-flex items-center">
+                      <div class="text-14 text-light-1 mr-10">8 nights</div>
+                      <div class="fw-500">€ 119,90</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mapFilter-results__item">
+            <div class="row x-gap-20 y-gap-20">
+              <div class="col-md-auto">
+                <div class="ratio ratio-1:1 size-120">
+                  <img src="GTrip/img/lists/hotel/1/5.png" alt="image" class="img-ratio rounded-4">
+                </div>
+              </div>
+
+              <div class="col-md">
+                <div class="row x-gap-20 y-gap-10 justify-between">
+                  <div class="col-lg">
+                    <h4 class="text-16 lh-17 fw-500">
+                      The Torridon on hills
+                      <span class="text-10 text-yellow-2">
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                      </span>
+                    </h4>
+                  </div>
+
+                  <div class="col-auto">
+                    <button class="button -blue-1 size-30 flex-center bg-light-2 rounded-full">
+                      <i class="icon-heart text-12"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="row y-gap-10 justify-between items-end pt-24 lg:pt-15">
+                  <div class="col-auto">
+                    <div class="d-flex items-center">
+                      <div class="size-38 rounded-4 flex-center bg-teal-1">
+                        <span class="text-14 fw-600 text-white">3.8</span>
+                      </div>
+
+                      <div class="ml-10">
+                        <div class="text-13 lh-14 fw-500">Good</div>
+                        <div class="text-12 lh-14 text-light-1">207 reviews</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-auto">
+                    <div class="d-flex items-center">
+                      <div class="text-14 text-light-1 mr-10">8 nights</div>
+                      <div class="fw-500">€ 89,00</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mapFilter-results__item">
+            <div class="row x-gap-20 y-gap-20">
+              <div class="col-md-auto">
+                <div class="ratio ratio-1:1 size-120">
+                  <img src="GTrip/img/lists/hotel/1/6.png" alt="image" class="img-ratio rounded-4">
+                </div>
+              </div>
+
+              <div class="col-md">
+                <div class="row x-gap-20 y-gap-10 justify-between">
+                  <div class="col-lg">
+                    <h4 class="text-16 lh-17 fw-500">
+                      DoubleTree by Hilton Dunblane Hydro
+                      <span class="text-10 text-yellow-2">
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                      </span>
+                    </h4>
+                  </div>
+
+                  <div class="col-auto">
+                    <button class="button -blue-1 size-30 flex-center bg-light-2 rounded-full">
+                      <i class="icon-heart text-12"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="row y-gap-10 justify-between items-end pt-24 lg:pt-15">
+                  <div class="col-auto">
+                    <div class="d-flex items-center">
+                      <div class="size-38 rounded-4 flex-center bg-teal-1">
+                        <span class="text-14 fw-600 text-white">4.0</span>
+                      </div>
+
+                      <div class="ml-10">
+                        <div class="text-13 lh-14 fw-500">Perfect</div>
+                        <div class="text-12 lh-14 text-light-1">1,201 reviews</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-auto">
+                    <div class="d-flex items-center">
+                      <div class="text-14 text-light-1 mr-10">8 nights</div>
+                      <div class="fw-500">€ 93,90</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mapFilter-results__item">
+            <div class="row x-gap-20 y-gap-20">
+              <div class="col-md-auto">
+                <div class="ratio ratio-1:1 size-120">
+                  <img src="GTrip/img/lists/hotel/1/7.png" alt="image" class="img-ratio rounded-4">
+                </div>
+              </div>
+
+              <div class="col-md">
+                <div class="row x-gap-20 y-gap-10 justify-between">
+                  <div class="col-lg">
+                    <h4 class="text-16 lh-17 fw-500">
+                      Harbour Spring by Marston's Inns
+                      <span class="text-10 text-yellow-2">
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                      </span>
+                    </h4>
+                  </div>
+
+                  <div class="col-auto">
+                    <button class="button -blue-1 size-30 flex-center bg-light-2 rounded-full">
+                      <i class="icon-heart text-12"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="row y-gap-10 justify-between items-end pt-24 lg:pt-15">
+                  <div class="col-auto">
+                    <div class="d-flex items-center">
+                      <div class="size-38 rounded-4 flex-center bg-teal-1">
+                        <span class="text-14 fw-600 text-white">3.8</span>
+                      </div>
+
+                      <div class="ml-10">
+                        <div class="text-13 lh-14 fw-500">Very Good</div>
+                        <div class="text-12 lh-14 text-light-1">907 reviews</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-auto">
+                    <div class="d-flex items-center">
+                      <div class="text-14 text-light-1 mr-10">8 nights</div>
+                      <div class="fw-500">€ 86,00</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="mapFilter-map">
+        <div class="map js-map"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="https://maps.googleapis.com/maps/api/js?key="></script>
+  <script src="https://unpkg.com/%40googlemaps/markerclusterer%402.5.3/dist/index.min.js"></script>
+
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="GTrip/js/vendors.js"></script>
+  <script src="GTrip/js/main.js"></script>
+  
+<script>
+//https://stackoverflow.com/a/1533945
+$(function() {
+	$(".form-checkbox").on('click', function () {
+    $("div.shuffleDivs").randomize("", "div.toshuffle");
+	});
+});
+
+
+(function($) {
+
+  $.fn.randomize = function(tree, childElem) {
+    return this.each(function() {
+      var $this = $(this);
+      if (tree) $this = $(this).find(tree);
+      var unsortedElems = $this.children(childElem);
+      var elems = unsortedElems.clone();
+
+      elems.sort(function() {
+        return (Math.round(Math.random()) - 0.5);
+      });
+
+      for (var i = 0; i < elems.length; i++)
+        unsortedElems.eq(i).replaceWith(elems[i]);
+    });
+  };
+
+})(jQuery);
+</script>
+
+<link href="css/cssdimi.css" rel="stylesheet">
+<!-- https://www.color-hex.com/color-palette/1020083 -->
+<div class="dimiNav d-flex flex-column align-items-center">
+<a href="index.html" class="p-1" style="background: #b2d8d8"><i class="ph ph-house"></i></a>
+<a href="cart.html" class="p-1" style="background: #66b2b2"><i class="ph ph-shopping-cart"></i></a>
+<a href="db-booking.html" class="p-1" style="background: #008080"><i class="ph ph-user"></i></a>
+<a href="" class="p-1 list-plus" style="background: #006666"><i class="ph ph-list-plus"></i></a>
+</div>
+<img src="img/api-app-svgrepo-com.svg" class="dms-logo" width="40" height="40" />
+
+
+
+<div id="slideout"></div>
+<script>
+	$('.list-plus').on('click', function(e){
+	  e.preventDefault();
+	  $('#slideout').toggleClass('on').load('index.html #slideout .slideoutContent');
+	});
+
+	// delegate the click since content was loaded via ajax
+	$('#slideout').on('click', '.slideoutContent i', function(){
+	 $('#slideout').toggleClass('on');
+	});
+</script>
+</body>
+</html>

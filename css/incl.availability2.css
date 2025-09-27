@@ -1,0 +1,165 @@
+/*AVAILABILITY 2*/
+.room_cap span, .ispack_accom_type span {
+    display: inline-block;
+    margin: 0 3px;
+    position: relative;
+}
+.room_cap img, .ispack_accom_type img {
+    width:10px;
+	height:23px;
+}
+
+.gly-rotate-45 { /*rotate the trigger icons*/
+  filter: progid: DXImageTransform.Microsoft.BasicImage(rotation=0.5);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  display: inline-block;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
+  transition-delay: 0.1s;
+}
+
+.tab_container {
+    /*min-height: 200px;*/
+}
+.tab_container a.modal-trigger, .tab_container-packages a.modal-trigger {
+    color: #26a69a;
+}
+
+
+div.style-three {
+    border: 0;
+    border-bottom: 1px dashed #fafafa;
+    background: #e0e0e0;
+}
+
+/*Action btn 'show totals'*/
+.fab {
+   width: 170px; 
+   height: 20px;
+   font-size: 12px;
+   line-height: 12px;
+   text-align: center;
+   /*
+   position: fixed;
+   right: 50px;
+   bottom: 50px;
+   */
+  transition: all 0.1s ease-in-out;
+}
+
+.configurator_box {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	min-height: 100px;
+	padding: 4em 1em 1em;
+	box-shadow: 0 12px 23px rgb(0 0 0 / 23%), 0 10px 10px rgb(0 0 0 / 19%);
+}
+.configurator_box > a.close__box {
+	position: absolute;
+	display: inline-block;
+	top: 5px;
+	right:0;
+	width: 40px;
+	height: 40px;
+    opacity: 0.5;
+}
+		a.close__box:hover {
+		  opacity: 1;
+		}
+		a.close__box:before, a.close__box:after {
+		  position: absolute;
+		  left: 15px;
+		  content: ' ';
+		  height: 33px;
+		  width: 2px;
+		  background-color: #26a69a;
+		}
+		a.close__box:before {
+		  transform: rotate(45deg);
+		}
+		a.close__box:after {
+		  transform: rotate(-45deg);
+		}
+
+/***************************************************************
+PROPERTY DETAILS in availability2, css similar to availability1
+but can now be styled individually
+Tab switching (Map, Contact, Info) 
+***************************************************************/
+.myTabContainerSwitch {
+	display:none;
+	width:100%;
+	height:100%;
+	min-height:497px;
+	padding:20px;
+	font-family:"Open Sans" !important;
+	font-weight:400;
+	font-size:12px;
+}
+	.tab-content {
+		display: none;/* hidden by default */
+	    position: relative; /*(1)*/
+		width:100%;
+		height:100%;
+		min-height:497px;
+	}
+     /* in order to make maps responive: (1) relative position to parent, (2) absolute position & width/height to iframe, (3) !!! the id=map_canvas needs also to have same declarations as iframe 
+	 *  idea taken from www.labnol.org/internet/embed-responsive-google-maps/28333/
+	 */
+	.tab-content iframe { /*(2)*/
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+	}
+
+	.tab-content.current{
+		display: inherit;
+	}
+
+	.tab-content h3 {
+		font-size:14px !important;
+		color: #26a69a;
+	}
+
+.pop_name {
+	display:none;
+}
+
+.pop_photos {
+	padding:5px;
+}
+
+.pop_mainpic {
+	width:400px;height:400px;float:left;
+}
+
+.pop_thumbs {
+	width:170px;float:left;
+	text-align:right;
+}
+
+.pop_contact {
+	padding-top:20px;
+	width:250px;
+	float:left;
+}
+
+.pop_description table tr{
+	border:none !important;
+}
+.pop_description h3.pr_am_head {
+	padding-bottom:10px;
+	border-bottom:1px solid #26a69a;
+}
+.pop_description table p.agroup_name {
+	font-size:14px !important;
+	color: #26a69a;
+}

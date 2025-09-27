@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Title -->
+    <title>octa dms | cart checkout</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.png">
+	
+	<!-- CORE CSS -->
+    <link rel="stylesheet" href="css/vendors/all.min48b2.css" media="all">
+    <link rel="stylesheet" href="css/layout.css" media="all">
+    <link rel="stylesheet" href="css/index.css" media="all">
+	
+	<!-- CUSTOM CSS -->
+    <link href="icons/phosphor/style.css?v=2.1.0" rel="stylesheet" media="screen">
+	<link href="icons/bootstrap-icons/bootstrap-icons.minf110.css?v=1.11.3" rel="stylesheet" media="screen">
+	
+	<!-- STRIPE -->
+    <link rel="stylesheet" href="css/stripe.base.css" media="all">
+    <link rel="stylesheet" href="css/stripe.example1.css" media="all">
+	<script src="https://js.stripe.com/v3/"></script>
+	<!-- another 2 JS files are at the end of page (MUST be placed there) -->
+</head>
+<body>
+
+<main class="home-boxed">
+
+    <section class="p-4 position-relative">
+		<div id="wallet" class="d-flex justify-content-between open w-100" style="position:relative; top: unset; left: unset; width:unset;">
+			<div class="col-9 px-4">
+				<div class="card-header">
+					<p class="fs-1">My travel itinerary <small>(<span class="total-quantity"></span> items)</small></p>
+				</div>
+				<div class="card-body">
+					<table class="table">
+						<thead>
+							<td>Date</td>
+							<td></td>
+							<td>Item</td>
+							<td class="text-center">Quantity</td>
+							<td></td>
+							<td></td>
+							<td>Rate</td>
+							<td></td>
+						</thead>
+						<tbody class="cart">
+						</tbody>
+						<tfoot>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="text-left">Total: &euro; <span class="total"></span>,00</td>
+							<td></td>
+						</tfoot>
+					</table>
+				</div>
+			</div>
+		
+			<div class="col-3">
+				<div class="payment-method"><!-- https://codepen.io/ivan8i/pen/rYqxKL -->
+				
+				  <p class="fs-3">Choose your payment method</p>
+				  
+				  <div class="alert text-success fade show"><i class="bi bi-bell me-1"></i>Demo does not support PayPal payments!</div>
+				  
+					<div class="pm-item">
+					  <input id="mpp" type="radio" name="payment-method">
+					  <label class="pm-label" for="mpp">
+						<div class="pm-text">
+						  <img src="img/pay_paypal.png" height="25" />
+						  <p>Safe payment online. Credit card needed. Paypal account is not necessary.</p>
+						</div>
+					  </label>
+					</div>
+					
+					<div class="pm-item">
+					  <input id="mcc" type="radio" name="payment-method" checked="checked">
+					  <label class="pm-label" for="mcc">
+						<div class="pm-text">
+						  <img src="img/pay_mc.png" height="35" />
+						  <p>Safe money transfer using our payment gateway. Safe payment online. Credit card needed. Visa, Maestro, Discover, American Express</p>
+						</div>
+					  </label>
+					</div>
+					
+					<button href="#" class="btn btn-flat border-success w-100 payNow"><i class="ph ph-shopping-cart me-2"></i>PAY €<span class="payTotal ms-1"></span></button>
+				</div>
+			</div>
+		</div>
+    
+	  
+				  
+		<div class="stripe-container d-none" id="stripeSection">
+		
+		  <!--Example 1-->
+		  <div class="cell example example1" id="example-1">
+			<form>
+				<div class="cancelPayment me-3 mb-2"><a href="cart.html">cancel and return</a></div>
+			  <fieldset>
+				<div class="roww">
+				  <label for="example1-name" data-tid="elements_examples.form.name_label">Name</label>
+				  <input id="example1-name" data-tid="elements_examples.form.name_placeholder" type="text" placeholder="Jane Doe" required="" autocomplete="name">
+				</div>
+				<div class="roww">
+				  <label for="example1-email" data-tid="elements_examples.form.email_label">Email</label>
+				  <input id="example1-email" data-tid="elements_examples.form.email_placeholder" type="email" placeholder="janedoe@gmail.com" required="" autocomplete="email">
+				</div>
+				<div class="roww">
+				  <label for="example1-phone" data-tid="elements_examples.form.phone_label">Phone</label>
+				  <input id="example1-phone" data-tid="elements_examples.form.phone_placeholder" type="tel" placeholder="(941) 555-0123" required="" autocomplete="tel">
+				</div>
+			  </fieldset>
+			  <fieldset>
+				<div class="roww">
+				  <div id="example1-card"></div>
+				</div>
+			  </fieldset>
+			  <button type="submit" id="stripePay_button" data-tid="elements_examples.form.pay_button">Pay $25</button>
+			  <div class="error" role="alert">
+				<span class="message"></span></div>
+			</form>
+			<div class="success">
+			  <div class="icon">
+				<svg width="84px" height="84px" viewBox="0 0 84 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				  <circle class="border" cx="42" cy="42" r="40" stroke-linecap="round" stroke-width="4" stroke="#000" fill="none"></circle>
+				  <path class="checkmark" stroke-linecap="round" stroke-linejoin="round" d="M23.375 42.5488281 36.8840688 56.0578969 64.891932 28.0500338" stroke-width="4" stroke="#000" fill="none"></path>
+				</svg>
+			  </div>
+			  <h3 class="title" data-tid="elements_examples.success.title">Payment successful</h3>
+			  <p class="message"><span data-tid="elements_examples.success.message">Thank you for your purchase. Please keep this payment token for your reference: </span><span class="token">tok_189gMN2eZvKYlo2CwTBv9KKh</span></p>
+			  <a class="reset" href="#">
+				<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				  <path fill="#000000" d="M15,7.05492878 C10.5000495,7.55237307 7,11.3674463 7,16 C7,20.9705627 11.0294373,25 16,25 C20.9705627,25 25,20.9705627 25,16 C25,15.3627484 24.4834055,14.8461538 23.8461538,14.8461538 C23.2089022,14.8461538 22.6923077,15.3627484 22.6923077,16 C22.6923077,19.6960595 19.6960595,22.6923077 16,22.6923077 C12.3039405,22.6923077 9.30769231,19.6960595 9.30769231,16 C9.30769231,12.3039405 12.3039405,9.30769231 16,9.30769231 L16,12.0841673 C16,12.1800431 16.0275652,12.2738974 16.0794108,12.354546 C16.2287368,12.5868311 16.5380938,12.6540826 16.7703788,12.5047565 L22.3457501,8.92058924 L22.3457501,8.92058924 C22.4060014,8.88185624 22.4572275,8.83063012 22.4959605,8.7703788 C22.6452866,8.53809377 22.5780351,8.22873685 22.3457501,8.07941076 L22.3457501,8.07941076 L16.7703788,4.49524351 C16.6897301,4.44339794 16.5958758,4.41583275 16.5,4.41583275 C16.2238576,4.41583275 16,4.63969037 16,4.91583275 L16,7 L15,7 L15,7.05492878 Z M16,32 C7.163444,32 0,24.836556 0,16 C0,7.163444 7.163444,0 16,0 C24.836556,0 32,7.163444 32,16 C32,24.836556 24.836556,32 16,32 Z"></path>
+				</svg>
+			  </a>
+			</div>
+
+			<div class="caption">
+			  <span data-tid="elements_examples.caption.no_charge" class="no-charge">welcome to octaDMS sandbox</span>
+			</div>
+		  </div>
+		  
+			<ul class="testCard m-0 p-0">
+			  <li>Test card:</li>
+			  <li>Number: 4242 4242 4242 4242</li>
+			  <li>Expiration: any future date</li>
+			  <li>CVC: any 3 digits</li>
+			</ul>
+			<img src="img/Powered-by-Stripe.svg" class="powerBy" width="160" height="35" />
+		</div>
+
+	</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="p-4 opacity-0">
+		<div class="col-6 px-4">
+          <p class="fs-1 payGWtrigger" style="cursor: pointer">Payment gateways supported <span class="fs-6 ms-3 tealColor">expand<i class="ph ph-arrow-down"></i><span></p>
+		</div>
+		
+    <div class="d-flex justify-content-between align-items-center w-100 d-none payGW">
+		<div class="col-6 px-4">
+          <p class="fs-4">Octa offers its clients a diverse range of payment methods to maximize conversion and enable full redundancy. After analyzing merchant requirements, we advise on multiple processing banks and alternative payment solutions. We work with smart routing tech platform gateways, giving merchants full control over all their payments.</p>
+          <p class="fs-4">We provide consultative advice on chargeback management, enabling you to reduce chargebacks and increase sales, detect and reduce fraud, shift chargeback liability, and overall optimize the balance between financial risk and optimal sales.</p>
+		</div>
+		<div class="col-6 px-4">
+	      <img src="img/payments.webp" height="450" />
+		</div>
+	</div>
+    </section>
+	
+</main>
+	<footer class="p-3">
+		<ul class="nav justify-content-center border-bottom pb-3 mb-3">
+		  <li class="nav-item"><img src="img/api-app-svgrepo-com.svg" width="40" height="40" /></li>
+		  <li class="nav-item"><a href="https://www.opencrs.cloud/" target="_blank" class="nav-link px-2 text-muted">openCRS</a></li>
+		  <li class="nav-item"><a href="https://www.opencrs.cloud/octa/" target="_blank" class="nav-link px-2 text-muted">openDMS</a></li>
+		  <li class="nav-item"><a href="https://opencrs.atlassian.net/servicedesk/customer/portals" target="_blank" class="nav-link px-2 text-muted">Opsgenie</a></li>
+		  <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">DMS platform</a></li>
+		</ul>
+		<p class="text-center text-muted">© 2025 octaBytes stack</p>
+	</footer>
+
+<!-- CORE JS -->
+<script src="js/jquery-3.7.1.min.js"></script>
+
+<link href="css/cssdimi.css" rel="stylesheet">
+<!-- https://www.color-hex.com/color-palette/1020083 -->
+<div class="dimiNav d-flex flex-column align-items-center">
+<a href="index.html" class="p-1" style="background: #b2d8d8"><i class="ph ph-house"></i></a>
+<a href="cart.html" class="p-1" style="background: #66b2b2"><i class="ph ph-shopping-cart"></i></a>
+<a href="db-booking.html" class="p-1" style="background: #008080"><i class="ph ph-user"></i></a>
+<a href="" class="p-1 list-plus" style="background: #006666"><i class="ph ph-list-plus"></i></a>
+</div>
+<img src="img/api-app-svgrepo-com.svg" class="dms-logo z-2" width="40" height="40" />
+
+
+<div id="slideout"></div>
+<script>
+	$('.list-plus').on('click', function(e){
+	  e.preventDefault();
+	  $('#slideout').toggleClass('on').load('index.html #slideout .slideoutContent');
+	});
+
+	// delegate the click since content was loaded via ajax
+	$('#slideout').on('click', '.slideoutContent i', function(){
+	 $('#slideout').toggleClass('on');
+	});
+</script>
+
+<script>
+
+$(function() {
+	/********************************************************
+	 * Stripe gateway
+	********************************************************/
+	
+	$('.payNow').on('click', function() {
+	  $('#wallet').css({'opacity': '0', 'pointer-events':'none'});
+	  $('#stripeSection').addClass('stripe-containerShow').removeClass('d-none');
+	  $('main').css({'background':'transparent','box-shadow':'none'}); 
+	});
+
+	/********************************************************
+	 * Show total to pay (in pay now button)
+	********************************************************/
+	// on page load we catch the wallet total and display it on 'pay now' & 'stripe' btn
+	const payVal = $('.total').text();
+	$('.payTotal').html(payVal + ',00');
+	$('#stripePay_button').html('Pay ' + payVal + ',00 EUR');
+	
+	// see archive MutationObserver.txt
+	// then we listen to wallet 'total' changes and apply to 'pay now' btn
+	const target = document.querySelector('.total')
+	const observer = new MutationObserver(function(mutations) {
+		//console.log(target.innerText);   
+	    $('.payTotal').html(target.innerText + ',00');
+	    $('#stripePay_button').html('Pay ' + target.innerText + ',00 EUR');
+	});
+
+	// Pass in the target node, as well as the observer options.
+	observer.observe(target, {
+		attributes:    true,
+		childList:     true,
+		characterData: true
+	});
+	
+	
+	
+	/********************************************************
+	 * show/hide payment providers we support
+	********************************************************/
+	
+	$('.payGWtrigger').on('click', function() {
+	  $('.payGW').toggleClass('d-none');
+	});
+	
+}); // doc ready
+			
+/************************************************************************
+ The Wallet
+************************************************************************/
+var cartLS=function(a){'use strict';function b(a,b,c){return b in a?Object.defineProperty(a,b,{value:c,enumerable:!0,configurable:!0,writable:!0}):a[b]=c,a}function c(a,b){var c=Object.keys(a);if(Object.getOwnPropertySymbols){var d=Object.getOwnPropertySymbols(a);b&&(d=d.filter(function(b){return Object.getOwnPropertyDescriptor(a,b).enumerable})),c.push.apply(c,d)}return c}function d(a){for(var b,d=1;d<arguments.length;d++)b=null==arguments[d]?{}:arguments[d],d%2?c(b,!0).forEach(function(c){f(a,c,b[c])}):Object.getOwnPropertyDescriptors?Object.defineProperties(a,Object.getOwnPropertyDescriptors(b)):c(b).forEach(function(c){Object.defineProperty(a,c,Object.getOwnPropertyDescriptor(b,c))});return a}var e=function(a,b){return b={exports:{}},a(b,b.exports),b.exports}(function(a){function b(a){return b="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(a){return typeof a}:function(a){return a&&"function"==typeof Symbol&&a.constructor===Symbol&&a!==Symbol.prototype?"symbol":typeof a},b(a)}function c(d){return a.exports="function"==typeof Symbol&&"symbol"===b(Symbol.iterator)?c=function(a){return b(a)}:c=function(a){return a&&"function"==typeof Symbol&&a.constructor===Symbol&&a!==Symbol.prototype?"symbol":b(a)},c(d)}a.exports=c}),f=b,g="__cart",h=null,i=function(a){h=a},j=function(a){return JSON.parse(localStorage.getItem(a||g))||[]},k=function(a,b){localStorage.setItem(b||g,JSON.stringify(a)),h&&h(j(b||g))},l=function(a){localStorage.removeItem(a||g),h&&h(j(a||g))},m=function(a){return j().find(function(b){return b.id===a})},n=function(a){return!!m(a)},o=function(a){return k(j().filter(function(b){return b.id!==a}))},p=function(a,b,c){return k(j().map(function(e){return e.id===a?d({},e,f({},b,c)):e}))},q=function(a){return a.id&&a.price},r=function(a){return s(a)?a.price*a.quantity:0},s=function(a){return a&&a.price&&a.quantity},t=function(a){return a&&"function"==typeof a};return a.add=function(a,b){return q(a)?n(a.id)?p(a.id,"quantity",m(a.id).quantity+(b||1)):k(j().concat(d({},a,{quantity:b||1}))):null},a.destroy=function(){return l()},a.exists=n,a.get=m,a.list=j,a.onChange=function(a){return t(a)?i(a):console.log(e(a))},a.quantity=function(a,b){return n(a)&&0<m(a).quantity+b?p(a,"quantity",m(a).quantity+b):o(a)},a.remove=o,a.subtotal=r,a.total=function(a){return j().reduce(function(b,c){return t(a)?a(b,c):b+=r(c)},0)},a.update=p,a}({});
+
+/************************************************************************
+ render wallet, perform calculations
+************************************************************************/
+		function renderCart(items) {
+			const $cart = document.querySelector(".cart")
+			const $total = document.querySelector(".total")
+			const $totalQuantity = document.querySelector(".total-quantity")
+			let totalQuantity = 0
+
+			//DIMI sort by date first, before populating the cart (see _HELP/Javascript)
+			const sortByDate = (items) => 
+			  items.sort (({date: a}, {date: b}) => a < b ? -1 : a > b ? 1 : 0)
+			  sortByDate (items)
+			//console.log(sortByDate (items));
+			
+			/* DIMI remove duplicates like "Dolphin show VIP seats Erwachsene: 1, Dolphin show VIP seats Kinder: 1"
+			 * MUST be inside renderCart() function and MUST execute on doc ready
+			 */
+			$(function() {
+				var prev;
+				$('#wallet div.dterm').each(function() {
+				  var text = $(this).text().trim();
+				  if (prev == text)
+					$(this).remove();
+				  
+				  prev = text;
+				});
+			});
+				
+			$cart.innerHTML = items.map((item) => {
+				totalQuantity += item.quantity
+				return `
+					<tr class="item-list">
+						<td><div class="item-date d-flex flex-column"><div class="d-flex align-items-center justify-content-center"><span class="tealColor fs-3">${item.day}</span></div> <p class="text-center m-0 p-0 fs-8 tealColor">${item.month}</p></div></td>
+						<td class="d-none">#${item.id}</td>
+						<td>${item.type}</td>
+						<td>${item.name}</td>
+						<td class="text-center">${item.quantity}x</td>
+						<td style="width: 60px;">	
+							<button type="button" class="btn btn-block btn-sm btn-outline-primary"
+								onClick="cartLS.quantity(${item.id},-1)">-</button>
+						</td>
+						<td style="width: 60px;">	
+							<button type="button" class="btn btn-block btn-sm btn-outline-primary"
+								onClick="cartLS.quantity(${item.id},1)">+</button>
+						</td>
+						<td class="text-start">&euro; ${item.price}</td>
+						<td class="text-start"><a href="#" class="item-remover" onClick="setTimeout(function(){cartLS.remove(${item.id})},500); $(this).closest('tr').addClass('removing');"><i class="bi bi-trash3 text-danger ms-2"></i></a></td>
+					</tr>`
+				}).join("")
+			$total.innerHTML = cartLS.total()
+			$totalQuantity.innerHTML = totalQuantity
+		}
+		renderCart(cartLS.list())
+		cartLS.onChange(renderCart)
+</script>
+
+<script src="js/stripe.index.js" data-rel-js></script>
+<script src="js/stripe.example1.js" data-rel-js></script>
+</body>
+</html>

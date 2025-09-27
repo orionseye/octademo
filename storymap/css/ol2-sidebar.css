@@ -1,0 +1,334 @@
+
+/* Custom scrollbar 
+   not really needed if .sidebar-content overflow-y:hidden, because scrollbar disapears
+*/
+.sidebar-content::-webkit-scrollbar {
+	width: 8px;
+}
+
+.sidebar-content::-webkit-scrollbar-track {
+	background: #1a1a1a;
+	border-radius: 4px;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb {
+	background: #523a1b;
+	border-radius: 4px;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb:hover {
+	background: #735725;
+}
+/*----------*/
+
+
+
+.sidebar {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100vh !important;
+	overflow: hidden;
+	z-index: 2;/*original 2000*/
+}
+
+.sidebar.collapsed {
+	width: 40px;
+}
+
+@media (min-width: 768px) {
+	.sidebar {
+		transition: width 500ms;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.sidebar {
+		width: 305px;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	.sidebar {
+		width: 390px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.sidebar {
+		width: 45%;
+	}
+}
+
+.sidebar-left {
+	left: 0;
+}
+
+@media (min-width: 768px) {
+	.sidebar-left {
+		left: 8px;
+	}
+}
+
+.sidebar-right {
+	right: 0;
+}
+
+
+.sidebar-tabs {
+	top: 0;
+	bottom: 0;
+	height: 100%;
+	background-color: rgb(0 0 0 / 78%);
+}
+
+.sidebar-left .sidebar-tabs {
+	left: 0;
+}
+
+.sidebar-right .sidebar-tabs {
+	right: 0;
+}
+
+.sidebar-tabs, .sidebar-tabs > ul {
+	position: absolute;
+	width: 40px;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.sidebar-tabs > li, .sidebar-tabs > ul > li {
+	width: 100%;
+	height: 40px;
+	color: #fff;
+	font-size: 12pt;
+	overflow: hidden;
+	transition: all 80ms;
+}
+
+.sidebar-tabs > li:hover, .sidebar-tabs > ul > li:hover {
+	color: #fff;
+	background-color: rgba(0, 60, 136, 0.6);
+}
+
+.sidebar-tabs > li.active, .sidebar-tabs > ul > li.active {
+	color: #fff;
+	background-color: #2b2929;
+}
+
+.sidebar-tabs > li.disabled, .sidebar-tabs > ul > li.disabled {
+	color: rgba(255, 255, 255, 0.4);
+}
+
+.sidebar-tabs > li.disabled:hover, .sidebar-tabs > ul > li.disabled:hover {
+	background: transparent;
+}
+
+.sidebar-tabs > li.disabled > a, .sidebar-tabs > ul > li.disabled > a {
+	cursor: default;
+}
+
+.sidebar-tabs > li > a, .sidebar-tabs > ul > li > a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 40px;
+	color: inherit;
+	text-decoration: none;
+	text-align: center;
+}
+
+.sidebar-tabs > ul + ul {
+	bottom: 0;
+}
+
+.sidebar-content {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	/*padding-right: 30px;*/
+	background-color: rgba(255, 255, 255, 0.95);
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+.sidebar-left .sidebar-content {
+	left: 40px;
+	right: 0;
+}
+
+.sidebar-right .sidebar-content {
+	left: 0;
+	right: 40px;
+	background-color: rgb(0 0 0 / 78%);
+}
+
+.sidebar.collapsed > .sidebar-content {
+	overflow-y: hidden;
+}
+
+.sidebar-pane {
+	display: none;
+	left: 0;
+	right: 0;
+	box-sizing: border-box;
+}
+
+.sidebar-pane.active {
+	display: block;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.sidebar-pane {
+		min-width: 265px;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	.sidebar-pane {
+		min-width: 350px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.sidebar-pane {
+		min-width: 420px;
+	}
+}
+
+.sidebar-header {
+	margin: -10px -20px 0;
+	height: 40px;
+	padding: 0 20px;
+	line-height: 40px;
+	font-size: 14.4pt;
+	color: #fff;
+	background-color: #0074d9;
+}
+
+.sidebar-right .sidebar-header {
+	padding-left: 40px;
+}
+
+.sidebar-close {
+	position: absolute;
+	top: 0;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.sidebar-left .sidebar-close {
+	right: 0;
+}
+
+.sidebar-right .sidebar-close {
+	left: 0;
+}
+
+
+@media (min-width: 768px) {
+	.sidebar {
+	}
+}
+
+.sidebar-left {
+	border-right: 3px solid transparent;
+}
+
+.sidebar-right {
+	border-left: 3px solid transparent;
+}
+
+.sidebar-tabs {
+	overflow: hidden;
+}
+
+.sidebar-left ~ .sidebar-map .olControlZoom,
+.sidebar-left ~ .sidebar-map .olScaleLine {
+	margin-left: 46px;
+}
+
+@media (min-width: 768px) {
+	.sidebar-left ~ .sidebar-map .olControlZoom,
+    .sidebar-left ~ .sidebar-map .olScaleLine {
+		transition: margin-left 500ms;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.sidebar-left ~ .sidebar-map .olControlZoom,
+    .sidebar-left ~ .sidebar-map .olScaleLine {
+		margin-left: 319px;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	.sidebar-left ~ .sidebar-map .olControlZoom,
+    .sidebar-left ~ .sidebar-map .olScaleLine {
+		margin-left: 404px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.sidebar-left ~ .sidebar-map .olControlZoom,
+    .sidebar-left ~ .sidebar-map .olScaleLine {
+		margin-left: 474px;
+	}
+}
+
+@media (min-width: 768px) {
+	.sidebar-left.collapsed ~ .sidebar-map .olControlZoom,
+  .sidebar-left.collapsed ~ .sidebar-map .olScaleLine {
+		margin-left: 54px;
+	}
+}
+
+.sidebar-right ~ .sidebar-map .olControlAttribution,
+.sidebar-right ~ .sidebar-map .olControlPermalink,
+.sidebar-right ~ .sidebar-map .olControlMousePosition {
+	margin-right: 46px;
+}
+
+@media (min-width: 768px) {
+	.sidebar-right ~ .sidebar-map .olControlAttribution,
+    .sidebar-right ~ .sidebar-map .olControlPermalink,
+    .sidebar-right ~ .sidebar-map .olControlMousePosition {
+		transition: margin-right 500ms;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.sidebar-right ~ .sidebar-map .olControlAttribution,
+    .sidebar-right ~ .sidebar-map .olControlPermalink,
+    .sidebar-right ~ .sidebar-map .olControlMousePosition {
+		margin-right: 319px;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	.sidebar-right ~ .sidebar-map .olControlAttribution,
+    .sidebar-right ~ .sidebar-map .olControlPermalink,
+    .sidebar-right ~ .sidebar-map .olControlMousePosition {
+		margin-right: 404px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.sidebar-right ~ .sidebar-map .olControlAttribution,
+    .sidebar-right ~ .sidebar-map .olControlPermalink,
+    .sidebar-right ~ .sidebar-map .olControlMousePosition {
+		margin-right: 474px;
+	}
+}
+
+@media (min-width: 768px) {
+	.sidebar-right.collapsed ~ .sidebar-map .olControlAttribution,
+  .sidebar-right.collapsed ~ .sidebar-map .olControlPermalink,
+  .sidebar-right.collapsed ~ .sidebar-map .olControlMousePosition {
+		margin-right: 54px;
+	}
+}

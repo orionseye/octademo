@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Title -->
+    <title>octa dms | story maps</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.png">
+	
+	<!-- CORE CSS -->
+    <link rel="stylesheet" href="css/vendors/all.min48b2.css" media="all">
+    <link rel="stylesheet" href="css/layout.css" media="all">
+    <link rel="stylesheet" href="css/index.css" media="all">
+	
+	<!-- CUSTOM CSS -->
+    <link href="icons/phosphor/style.css?v=2.1.0" rel="stylesheet" media="screen">
+	<link href="icons/bootstrap-icons/bootstrap-icons.minf110.css?v=1.11.3" rel="stylesheet" media="screen">
+	
+	<!-- DIMI storymap CSS -->
+    <link rel="stylesheet" href="storymap/css/leaflet.css" />
+    <link rel="stylesheet" href="storymap/css/storymap.css" />
+    <link rel="stylesheet" href="storymap/css/ol2-sidebar.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@400;500;600&display=swap">
+	
+
+<style>
+.storyTeaser p {
+	font-size: 1.2em;
+}
+.pricing-wrap .img-1 {
+	top: 2px;
+	width: unset;
+	transform: translate3d(0, 0, 45px) rotate(337deg) perspective(100px);
+}
+</style>
+</head>
+<body>
+
+<nav id="wallet" class="shadow-lg">
+  <div class="position-relative float-end"><a class="sidebarToggle wallet-close"></a></div>
+  
+    <div class="p-4">
+		<h2>Cart <small>(<span class="total-quantity"></span> items)</small></h2>
+
+		<table class="table">
+			<tbody class="cart">
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="d-flex align-items-center justify-content-end border-top p-4">
+		<div class="me-2 fs-6">Total:<strong class="total ms-2"></strong></div>
+		<a href="cart.html" class="btn link-success border-success me-2"><i class="ph ph-shopping-cart me-2"></i>checkout</a>
+	</div>
+</nav>
+
+<!-- do not place anything here in between, as stupid #wallet 'push <main> to right will not work ! -->
+
+<main>
+
+    <section class="anim-section over-hide bg-white">
+        <div class="container">
+			<!-- 
+			has had css class 'full-height' = 100vh (see index.css) but removed as it causes lables to expand uggly
+			-->
+			<div class="row">
+			
+				<div class="col-md-6 align-self-center storyTeaser">
+				   <p id="typewriter" style="font-size: 3em; color: #4c7abe"></p>
+
+                   <h1 class="lead display-1" style="color: #4c7abe">Story Maps</h1>
+                   <p>Transform your maps and geographic information system (GIS) work into interactive content that informs, inspires, and engages your audience.</p>
+                   <p class="text-bold">Harness the power of maps to tell engaging stories.</p>
+                   <p>Use octaDMS StoryMaps to combine maps, 3D scenes, embedded content, multimedia, and more into an interactive narrative that can create awareness, influence opinion, and affect change. The easy-to-use builder helps you create digital stories and presentations called briefings that incorporate your dynamic geographic information system (GIS) work and external content. Stories and briefings can be organized into collections and customized with themes.</p>
+				   
+                   <p style="font-size: 1.5em;">There are no limits in creating beautiful, interactive maps</p>
+				</div>
+				
+				<div class="col-md-6 d-flex text-center align-self-center justify-content-end py-5 kayak-guide">
+					<div class="text-center py-5 py-md-0">
+						<div class="card-3d-wrap mx-auto">
+							<div class="card-3d-wrapper">
+								<div class="card-front">
+									<div class="pricing-wrap">
+										<h4 class="mb-5">Aggregator</h4>
+										<h2 class="mb-2">96Mio<sup>+</sup></h2>
+										<p class="mb-4">worldwide GEO objects</p>
+										<h2 class="mb-1">17,500<sup>+</sup></h2>
+										<p class="mb-4">POI dataset schemas</p>
+										<div class="img-wrap img-2">
+											<img src="img/index/sea.png" alt="">
+										</div>
+										<div class="img-wrap img-1">
+											<img src="storymap/assets/storyMap1.png" alt="">
+										</div>
+			      					</div>
+			      				</div>
+			      			</div>
+			      		</div>
+			      	</div>
+		      	</div>
+			</div>
+	    </div>
+    </section>
+
+
+
+
+
+
+
+	<div class="position-relative w-100 h-100">
+		<div class="loading-indicator" id="loading-indicator">
+			<div class="loading-spinner"></div>
+			<!-- div class="loading-text">Loading Map...</div -->
+		</div>
+		
+		<div id="prev-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><polyline points="160 208 80 128 160 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg></div>
+		<div id="next-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg></div>
+		
+		<div id="sidebar" class="sidebar sidebar-right">
+			<!-- Nav tabs -->
+			<div class="sidebar-tabs">
+				<ul role="tablist">
+					<li><a href="#home" role="tab"><i class="ph ph-map-pin"></i></a></li>
+					<li><a href="#profile" role="tab"><i class="ph ph-info"></i></a></li>
+					<li class="disabled"><a href="#messages" role="tab"><i class="fa fa-envelope"></i></a></li>
+				</ul>
+
+				<ul role="tablist">
+					<li><a href="#settings" role="tab"><i class="ph ph-gear"></i></a></li>
+				</ul>
+			</div>
+			
+			<!-- Tab panes -->
+			<div class="sidebar-content">
+				<div class="sidebar-pane w-100 h-100 active" id="home">
+						
+						<a class="start-over-btn" id="start-over-btn"><i class="ph ph-arrows-clockwise me-2"></i>start over</a>
+						
+						<div class="header d-none">
+							<h1>Arya's Journey</h1>
+							<p>Follow Arya Stark's path through Westeros and beyond</p>
+						</div>
+						
+						<div class="story-content" id="story-intro">
+							<div class="story-background" style="background-image: url('storymap/assets/1-1.jpg')"></div>
+							
+							<div class="story-inner">
+							<h2>Return to Nature</h2>
+							<p>Our wildlife tours blend some of Scottish nature’s great events in the more incredible locations, with expert guides so you become part of the action.</p>
+							<p>Using activities, we’re able to get closer to Scottish wildlife because our guides understand their behaviour and you’re out there experiencing Scotland, rather than sitting in a hide waiting for the wildlife to come to you.</p>
+							<p>Come and explore Scotland and its wildlife with us.</p>
+							<p>limited offer for just<span class="ms-4">€</span> <span style="font-size: 2em;">199,-</span></p>
+							</div>
+						</div>
+						
+						<div class="story-content" id="story-kings-landing">
+							<div class="story-background" style="background-image: url('storymap/assets/2.jpg')"></div>
+							
+							<div class="story-inner">
+							<h2>Travel to the Outer Hebrides</h2>
+							<p>Meet your Wilderness guide in Inverness this morning and drive to Ullapool to catch the morning ferry to the Isle of Lewis – the largest island in the Outer Hebrides.</p>
+							<p> The ferry journey takes us through well-known seabird and cetacean feeding areas, so keep your eyes peeled for dorsal fins cutting through the white-capped water. After arriving in Stornoway, a short drive north takes you to Tolsta Head, the perfect place to stretch your legs with beautiful views across the sea and down to stacks and natural arches.</p>
+							<p>Later, enjoy a scenic drive south to arrive at your welcoming accommodation this evening.</p>
+							</div>
+						</div>
+						
+						<div class="story-content" id="story-harrenhal">
+							<div class="story-background" style="background-image: url('storymap/assets/3.jpg')"></div>
+							
+							<div class="story-inner">
+							<h2>Voyage to St. Kilda</h2>
+							<p>Located over 40 miles offshore, visiting the fantastic double World Heritage Site of St Kilda* is an adventure that requires a 3-hour boat trip each way.</p>
+							<p>The crossing provides an excellent opportunity to see marine wildlife, and as we approach the islands, we can hear, see and smell the vast seabird colonies.</p>
+							<p>Home to some of the highest sea cliffs in Britain and globally important colonies of gannets, fulmars and puffins – it’s a truly incredible place. Once ashore, enjoy a few hours of exploring with your knowledgeable guide, taking the time to walk around the abandoned village and learning about the island’s haunting history. </p>
+							</div>
+						</div>
+						
+						<div class="story-content" id="story-braavos">
+							<div class="story-background" style="background-image: url('storymap/assets/4.jpg')"></div>
+							
+							<div class="story-inner">
+							<h2>The Isle of Harris</h2>
+							<p>The Isle of Harris has a long and fascinating history. Today we’ll follow the Golden Road – so named because of the cost of building it through the rugged and rough terrain.</p>
+							<p>We’ll also take the opportunity to visit St Clement’s Church, which is considered to be the grandest medieval building on the Western Isles. We’ll enjoy a walk across the vast expanses of moorland, which hold nationally important breeding populations of greenshank and dunlin, before exploring the white sands of Luskentyre – one of the most breathtaking beaches on Harris.</p>
+							<p>Wild, evocative and wind-swept, a visit to Isle of Harris is sure to be an incredibly memorable experience.</p>
+							</div>
+						</div>
+						
+						<div class="story-content" id="story-winterfell">
+							<div class="story-background" style="background-image: url('storymap/assets/5.jpg')"></div>
+							
+							<div class="story-inner">
+							<h2>In Search of Raptors</h2>
+							<p>Spend the morning exploring the hills of Harris, which has one of Europe’s highest densities of golden eagles. Visit a purpose-built eagle hide (located in a dramatic glen) with the hope of spotting the majestic birds that call this wild island home.</p>
+							<p>Sea eagles, also known as white-tailed eagles, are also frequently spotted in this area as they come in to feed on salmon and other prey.</p>
+							<p>Other daytime hunters include the hen harrier and the furious-looking short-eared owl. This afternoon, we’ll take a ferry across to the islands of the southern Outer Hebrides.</p>
+							</div>
+						</div>
+						
+						<div class="story-content" id="story-jim">
+							<div class="story-background" style="background-image: url('storymap/assets/1.jpg')"></div>
+							
+							<div class="story-inner">
+							<h2>North Uist Corncrakes</h2>
+							<p>A key bird species in this region is the secretive corncrake, which skulks in the fertile machair meadows and ancient farmlands - a landscape once much more common on the mainland. The corncrake is often heard but rarely seen.</p>
+							<p>The most common time to spot this elusive bird is in early summer. Enjoy visiting the RSPB reserve at Balranald, spotting rare species such as the great yellow bumblebee, corn bunting, golden ringed dragonfly, and many scarce wildflowers.</p>
+							<p> The heather moors of North Uist and Benbecula offer further good raptor-hunting habitats. We will spend time searching for these stunning birds of prey and returning summer migrants such as the wheatear and stonechat.</p>
+							</div>
+						</div>
+						
+						<div class="story-content" id="story-jimm">
+							<div class="story-background" style="background-image: url('storymap/assets/6.jpg')"></div>
+							
+							<div class="story-inner">
+							<h2>South Uist Birds and Wildflowers</h2>
+							<p>During bird migration seasons, these islands offer an important stopover for exotic and lost migrating birds from America, the Arctic, the Mediterranean, and even the Far East, which makes for exciting twitching.</p>
+							<p>We depart across the Minch again, this time on the late morning ferry heading for the Isle of Skye. From here, we journey across Skye and over the bridge to the mainland before winding our way along the shores of Loch Ness to arrive in Inverness.</p>
+							<p>We will spend time searching for these stunning birds of prey and returning summer migrants such as the wheatear and stonechat.</p>
+							</div>
+						</div>
+						
+						<div class="story-content" id="story-jimmy">
+							<div class="story-background" style="background-image: url('storymap/assets/7.jpg')"></div>
+							
+							<div class="story-inner">
+							<h2>Stunning Outer Hebrides</h2>
+							<p>Meet your Wilderness guide in Inverness this morning and drive to Ullapool to catch the morning ferry to the Isle of Lewis – the largest island in the Outer Hebrides.</p>
+							<p>The ferry journey takes us through well-known seabird and cetacean feeding areas, so keep your eyes peeled for dorsal fins cutting through the white-capped water.</p>
+							<p>After arriving in Stornoway, a short drive north takes you to Tolsta Head, the perfect place to stretch your legs with beautiful views across the sea and down to stacks and natural arches. Later, enjoy a scenic drive south to arrive at your welcoming accommodation this evening.</p>
+							</div>
+						</div>
+						
+						<div class="timeline d-none" id="timeline">
+							<!-- Timeline items will be generated by JavaScript -->
+						</div>
+						
+						<div class="map-type-indicator d-none" id="map-type-indicator">Map: Dark</div>
+						<div class="add-to-cart btn link-white border-white"><i class="ph ph-shopping-cart me-2"></i>Add to cart</div>
+				</div>
+
+				<div class="sidebar-pane text-white w-100 h-100 p-4" id="profile">
+					<p class="fs-4 fw-light border-bottom pb-2 mb-4">Trip Overview<!-- i class="ph ph-caret-right sidebar-close"></i --></p>
+					<p class="fw-light">Join us on a journey to the beautiful Hebridean island of Islay, one of the most wildlife-rich locations on the west coast of Scotland. Home to some of the most incredible spectacles, including Barnacle Geese, which flock to Islay in their thousands each year.</p>
+					<p class="fw-light">Here, you will experience the incredible wealth of birdlife and marine life that seek refuge in the wild places of this intriguing island. Let your guide bring this island to life with their knowledge and interpretation of behaviour so that you don’t miss a thing.</p>
+					<p class="fw-light">Set foot on white sandy beaches, coastal trails and the endless expanses of grassland found in the famous coastal ‘machairs’ as you gain a fascinating insight into the tapestry of island life.</p>
+					<p class="fw-light">Experience Islay’s true spirit and hospitality with a tour and tasting of one of the island’s famous whisky distilleries. Relax in your handpicked luxury hotel accommodation and enjoy delicious, locally sourced produce each evening.</p>
+					<img src="storymap/assets/Itinerary_sample.jpg" />
+				</div>
+
+				<div class="sidebar-pane" id="messages">
+					<h1 class="sidebar-header">Messages<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+				</div>
+
+				<div class="sidebar-pane" id="settings">
+					<h1 class="sidebar-header">Settings<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+				</div>
+			</div>
+		</div>
+
+		<div id="map"></div>
+    </div>
+
+
+
+
+
+
+
+</main>
+
+<!-- CORE JS -->
+<script src="js/jquery-3.7.1.min.js"></script>
+
+<!-- DIMIs storymap JS -->
+<script src="storymap/js/jquery-sidebar.js"></script>
+<script src="storymap/js/leaflet.js"></script>
+<script src="storymap/js/leaflet.polylineDecorator.min.js"></script>
+<script src="storymap/js/index.js"></script>
+
+<link href="css/cssdimi.css" rel="stylesheet">
+<!-- https://www.color-hex.com/color-palette/1020083 -->
+<div class="dimiNav d-flex flex-column align-items-center" style="position:absolute; top:4.2em; bottom:unset;"><!-- unset default 'bottom' and show on top -->
+<a href="index.html" class="p-1" style="background: #b2d8d8"><i class="ph ph-house"></i></a>
+<a href="cart.html" class="p-1" style="background: #66b2b2"><i class="ph ph-shopping-cart"></i></a>
+<a href="db-booking.html" class="p-1" style="background: #008080"><i class="ph ph-user"></i></a>
+<a href="" class="p-1 list-plus" style="background: #006666"><i class="ph ph-list-plus"></i></a>
+</div>
+<img src="img/api-app-svgrepo-com.svg" class="dms-logo z-2" width="40" height="40" />
+
+
+<div id="slideout"></div>
+<script>
+	$('.list-plus').on('click', function(e){
+	  e.preventDefault();
+	  $('#slideout').toggleClass('on').load('index.html #slideout .slideoutContent');
+	});
+
+	// delegate the click since content was loaded via ajax
+	$('#slideout').on('click', '.slideoutContent i', function(){
+	 $('#slideout').toggleClass('on');
+	});
+</script>
+
+<script>
+//TypeWriter.js
+(function(){function b(a,c){this.updateOptions(c);this.txt="";this.loopNum=0;element="string"===typeof a?document.getElementById(a):a;this.txtSpan=document.createElement("span");this.txtSpan.setAttribute("class","typewriter-text");element.appendChild(this.txtSpan);this.cursorSpan=document.createElement("span");this.cursorSpan.setAttribute("class","typewriter-cursor");this.cursorSpan.innerHTML=this.cursor;element.appendChild(this.cursorSpan);this.cursorSpan.style.marginLeft="-5px"}b.prototype.updateOptions=function(a){this.options=a?a:{};this.strings=this.options.strings?this.options.strings:["Simple TypeWriter"];this.speed=parseInt(this.options.speed,10)||100;this.delay=parseInt(this.options.delay,10)||5E3;this.loop="undefined"!==typeof this.options.loop?this.options.loop:!0;this.cursor=this.options.cursor?this.options.cursor:"\u2502"};b.prototype.start=function(){var a=this,c=this.speed,d=this.strings[this.loopNum%this.strings.length];if(this.isDeleting){if(this.loopNum===this.strings.length-1&&!this.loop)return;this.txt=d.substring(0,this.txt.length-1)}else this.txt=d.substring(0,this.txt.length+1);this.cursorSpan.animate([{opacity:1}],{duration:1E3,iterations:Infinity});this.txtSpan.innerHTML=this.txt;this.isDeleting||this.txt!==d?this.isDeleting&&""===this.txt&&(this.isDeleting=!1,this.loopNum++):(this.isDeleting=!0,c=this.delay,this.cursorSpan.animate([{opacity:0},{opacity:1},{opacity:0}],{duration:1E3,iterations:Infinity}));setTimeout(function(){a.start()},c)};"undefined"!==typeof module&&"undefined"!==typeof module.exports?module.exports=b:"function"===typeof define&&define.amd?define([],function(){return b}):window.TypeWriter=b})();
+
+window.onload = function() {
+	var typewriter = new TypeWriter("typewriter", {
+		strings: ["beautiful", "powerful", "extendable"],
+		delay: 2000
+	});
+	typewriter.start();
+}
+</script>
+
+<script src="js/wallet.min.js"></script><!-- always at the end, but before 'wallet proccessing' !! -->
+<script>
+$(function() {
+	/**********************************************************************
+	 Wallet processing
+	 Here we don't need the 'dirty' trick
+	**********************************************************************/
+
+	$('.add-to-cart').on('click', function(){
+		//searchParams.get('date')
+		const data_wallet_row = '<div class="dterm m-0 p-0 fs-7 d-block">Return to Nature</div><div class="m-0 p-0 fs-8 d-block">Scottish wildlife</div><div class="m-0 p-0 fs-9 d-block">Persons: 1</div>';
+		
+		// date is not displayed in cart, but needed for sorting
+		cartLS.add({id: 999, name: data_wallet_row, price: 199, type: '<i class=\"ph ph-map-trifold fs-5 text-primary\"></i>', day: 01, month: 'Dec', date: '2025-12-01'}); 
+		$('#wallet').toggleClass("open");
+	});
+ 
+});// doc ready
+</script>
+
+</body>
+</html>
